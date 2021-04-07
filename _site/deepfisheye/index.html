@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="/assets/css/header_footer.css">
+		<script src="//code.jquery.com/jquery-3.2.1.min.js"></script>
+		<link rel="stylesheet" href="/assets/bootstrap-4.3.1-dist/css/bootstrap.min.css">
+		<script scr="/assets/bootstrap-4.3.1-dist/js/bootstrap.min.js"></script>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<script async src="https://www.googletagmanager.com/gtag/js?id=G-YG4YGWN03V"></script>
+		<script>
+		  window.dataLayer = window.dataLayer || [];
+		  function gtag(){dataLayer.push(arguments);}
+		  gtag('js', new Date());
+
+		  gtag('config', 'G-YG4YGWN03V');
+		</script>
+		<title> Keunwoo Park's Homepage  </title>
+  </head>
+  <body>
+		<div class="layout-content">
+			<link rel=stylesheet type=text/css href="/assets/css/article.css">
+<div class='container'>
+  <div class='main'>
+    <h1 class="text-center mt-5 mb-3"> DeepFisheye: Near-Surface Multi-Finger Tracking Technology Using Fisheye Camera </h1>
+    <h3 class="text-center"> <p><strong>Keunwoo Park</strong>, Sunbum Kim, Youngwoo Yoon, Tae-Kyun Kim, Geehyuk Lee</p>
+ </h3>
+    <h3 class="text-center text-muted"> UIST 2020 </h3>
+    
+    <div class="media_div mb-5">
+      
+      <div class="video_div embed-responsive embed-responsive-16by9"> <iframe class="embed-responsive-item" width="560" height="315" src = "https://www.youtube.com/embed/Vds_rvnU6j8" frameborder="0" allowfullscreen></iframe></div>
+      
+    </div>
+    
+    <div class="content"><h1 id="abstract">Abstract</h1>
+<p>Near-surface multi-finger tracking (NMFT) technology expands the input space of touchscreens by enabling novel interactions such as mid-air and finger-aware interactions. We present DeepFisheye, a practical NMFT solution for mobile devices, that utilizes a fisheye camera attached at the bottom of a touchscreen. DeepFisheye acquires the image of an interacting hand positioned above the touchscreen using the camera and employs deep learning to estimate the 3D position of each fingertip. We created two new hand pose datasets comprising fisheye images, on which our network was trained. We evaluated DeepFisheye’s performance for three device sizes. DeepFisheye showed average errors with approximate value of 20 mm for fingertip tracking across the different device sizes. Additionally, we created simple rule-based classifiers that estimate the contact finger and hand posture from DeepFisheye’s output. The contact finger and hand posture classifiers showed accuracy of approximately 83 and 90%, respectively, across the device sizes.</p>
+
+<h1 id="technical-concept">Technical Concept</h1>
+<p><img src="/assets/img/deepfisheye/technical_concept.png" alt="prototype" /></p>
+
+<p>DeepFisheye pipeline first preprocesses a fisheye image, and then estimates the 3D locations of all hand joints with DeepFisheye network (DeepFisheyeNet). Then, two rule-based classifiers classify contact fingers and hand postures.</p>
+
+<p>DeepFisheyeNet comprises two sub-networks: Pix2Depth (P2DNet) and hand pose estimator (HPENet) networks. P2DNet generates a depth image of the hand from the fisheye color image input. Next, hand parts of the color image are segmented using the generated depth image. Segmentation is a simple process that selects pixels from the color image only when the value of the corresponding pixel on the depth image is larger than 0. The depth image assists HPENet to achieve more accurate hand pose estimation. Lastly, HPENet estimates the final hand pose relative to the fisheye camera, using both color and generated depth images.</p>
+
+<h1 id="deepfisheye-hand-datasets">DeepFisheye Hand Datasets</h1>
+
+<p>A large-scale dataset is essential for the learning-based hand pose estimation model. Although several hand datasets are available, we created our own because the existing ones comprise only flat images that follow the pinhole camera model. Unlike flat images, fisheye images are highly distorted, and the hands are occluded at some locations. This type of distortion and occlusion can lead to poor performance if we input the fisheye images into a hand pose estimator trained on flat images.</p>
+
+<p>Creating a dataset is expensive because it requires collecting real images in diverse environments and annotating accurate 3D positions of the hand joints. In fact, other studies have created hand datasets synthetically with virtual hand models for cost effectiveness. However, real and synthetic images differ considerably in several aspects, e.g., texture, lighting, shadows. Owing to this <em>domain gap,</em> if a deep learning model is trained only with synthetic images, it may not perform satisfactorily with real images.</p>
+
+<p>Therefore, we created two datasets. The first, <strong>DeepFisheye synthetic dataset</strong>, comprises pairs of hand images and 3D joint data. The second is the <strong>DeepFisheye real dataset</strong> that comprises pairs of real hand images and 3D joint data. The synthetic dataset was used for initial training of a network estimating 3D hand pose, and the real dataset for decreasing the domain gap by fine-tuning the network.</p>
+
+<p>If you want to use our dataset, please go to <a href="https://github.com/KeunwooPark/DeepFisheyeDataset">this repository</a>.</p>
+
+<p><strong>For more detail, please see our paper.</strong></p>
+
+<h1 id="resources">Resources</h1>
+<ul>
+  <li><a href="https://dl.acm.org/doi/10.1145/3379337.3415818">paper</a></li>
+  <li><a href="https://youtu.be/5gbf8Vztjzc">short talk</a></li>
+  <li><a href="https://youtu.be/8W3OpxIXpQg">long talk</a></li>
+  <li><a href="https://youtu.be/thmtBKEazxw">demo</a></li>
+  <li><a href="https://github.com/KAIST-HCIL/DeepFisheyeNet">code</a></li>
+</ul>
+</div>
+    
+  </div>
+</div>
+
+		</div>
+	</body>
+  <footer class="mb-5">
+    <a href="/">back to home</a>
+  </footer>
+</html>

@@ -42,6 +42,10 @@ layout: default
         <br>
         I completed a bachelor's course in Mechanical Engineering and Computer Science in KAIST. I also finished a master's course for Computer Science in KAIST.<br><br>
         Please contact me through email [<a href="mailto:keunwoo@kaist.ac.kr">keunwoo(at)kaist.ac.kr</a>].
+        <br>
+        <br>
+
+        This page is updated at <i>7th April 2021</i>.
 
         </strong>
       </p>
@@ -51,10 +55,24 @@ layout: default
 <div class='main container pt-5 pb-5'>
   <h2> Curriculum Vitae </h2>
   <hr>
-  <div class="mb-5"> [<a target="_blank" href ="/cv.pdf">download</a>] </div>
+  <div class="mb-5"> [<a target="_blank" href ="/assets/KeunwooParkCV.pdf">download</a>] </div>
   <h2> Publications </h2>
   <hr>
-  
+  <h3 class="mb-3"> Conferences </h3>
+  {% for post in site.categories.conference %}
+    {% include post_card.html post=post%}
+  {% endfor %}
+
+  <h3 class="mb-3"> Journals </h3>
+  {% for post in site.categories.journal %}
+    {% include post_card.html post=post%}
+  {% endfor %}
+
+  <h3 class="mb-3"> Posters </h3>
+  {% for post in site.categories.poster_demo %}
+    {% include post_card.html post=post%}
+  {% endfor %}
+
   <h2 class="mb-3"> Other Projects </h2>
   <hr>
   {% for post in site.categories.misc %}

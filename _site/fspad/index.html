@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="/assets/css/header_footer.css">
+		<script src="//code.jquery.com/jquery-3.2.1.min.js"></script>
+		<link rel="stylesheet" href="/assets/bootstrap-4.3.1-dist/css/bootstrap.min.css">
+		<script scr="/assets/bootstrap-4.3.1-dist/js/bootstrap.min.js"></script>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<script async src="https://www.googletagmanager.com/gtag/js?id=G-YG4YGWN03V"></script>
+		<script>
+		  window.dataLayer = window.dataLayer || [];
+		  function gtag(){dataLayer.push(arguments);}
+		  gtag('js', new Date());
+
+		  gtag('config', 'G-YG4YGWN03V');
+		</script>
+		<title> Keunwoo Park's Homepage  </title>
+  </head>
+  <body>
+		<div class="layout-content">
+			<link rel=stylesheet type=text/css href="/assets/css/article.css">
+<div class='container'>
+  <div class='main'>
+    <h1 class="text-center mt-5 mb-3"> FS-Pad: Video Game Interactions with a Force Feedback Gamepad </h1>
+    <h3 class="text-center"> <p>Youngbo Aram Shim, <strong>Keunwoo Park</strong>, Sangyoon Lee, Jeongmin Son, Taeyun Woo, Geehyuk Lee</p>
+ </h3>
+    <h3 class="text-center text-muted"> UIST 2020 </h3>
+    
+    <div class="media_div mb-5">
+      
+      <div class="video_div embed-responsive embed-responsive-16by9"> <iframe class="embed-responsive-item" width="560" height="315" src = "https://www.youtube.com/embed/CaOFOnD6ADk" frameborder="0" allowfullscreen></iframe></div>
+      
+    </div>
+    
+    <div class="content"><h1 id="abstract">Abstract</h1>
+<p>Force feedback has not been fully explored in modern gaming environments where a gamepad is the main interface. We developed various game interaction scenarios where force feedback through the thumbstick of the gamepad can be effective, and categorized them into five themes. We built a haptic device and control system that can support all presented interactions. The resulting device, FS-Pad, has sufficient fidelity to be used as a haptic game interaction design tool. To verify the presented interactions and effectiveness of the FS-Pad, we conducted a user study with game players, developers, and designers. The subjects used an FS-Pad while playing a demo game and were then interviewed. Their feedback revealed the actual needs for the presented interactions as well as insight into the potential design of game interactions when applying FS-Pad.</p>
+
+<h1 id="hardware-prototype">Hardware Prototype</h1>
+
+<p><img src="/assets/img/fspad/hardware_model.png" alt="prototype" /></p>
+
+<p>The stick shaft is connected to the guiding parts that manage the rotation of each axis and form a 2-axis gimbal structure. One end of the guiding part is linked to the rotary potentiometers, which are detached from a joystick module (ALPS RKJXK122400Y), and the other end is glued to the spur gears. The potentiometers measure the tilt angles of the stick about the two axes. The stick shaft was made by laser-cutting the stainless steel, and the guiding parts and case of the module were 3D printed (Formlabs Tough Resin). To satisfy the mechanical performance requirement, we selected coreless motors (16DCT Athlonix 219E), which have no cogging and possess small inertia owing to their light mass.</p>
+
+<p><img src="/assets/img/fspad/hardware.png" alt="prototype" /></p>
+
+<p>To form an FS-pad, we packaged the force feedback module using the housing of an Xbox One controller. We cut out the shoulder button, trigger button, and half of the PCB to make space and attached the FS module using Shapelock thermoplastic. We kept the ABXY buttons on the pad and connected the wires on the PCB for use as inputs.</p>
+
+<h1 id="game-prototype">Game Prototype</h1>
+
+<p>We built a 3D adventure game to support all five game interaction themes using FS-Pad. The overall game interactions are summarized in the figure in below.</p>
+
+<p><img src="/assets/img/fspad/game.png" alt="prototype" /></p>
+
+<p><strong>For more detail, please see our paper.</strong></p>
+
+<h1 id="resources">Resources</h1>
+
+<ul>
+  <li><a href="https://dl.acm.org/doi/10.1145/3379337.3415850">paper</a></li>
+  <li><a href="https://youtu.be/BEKy-ieeBgE">short talk</a></li>
+  <li><a href="https://youtu.be/DW4P4TP_ETA">long talk</a></li>
+  <li><a href="https://github.com/KAIST-HCIL/FS-Pad">code and 3D model</a></li>
+</ul>
+
+<h1 id="my-contributions">My Contributions</h1>
+
+<p>I participated in the concept ideation process of this project, and I contributed to the firmware design and implementation. Moreover, I provided research advices during the project.</p>
+</div>
+    
+  </div>
+</div>
+
+		</div>
+	</body>
+  <footer class="mb-5">
+    <a href="/">back to home</a>
+  </footer>
+</html>

@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="/assets/css/header_footer.css">
+		<script src="//code.jquery.com/jquery-3.2.1.min.js"></script>
+		<link rel="stylesheet" href="/assets/bootstrap-4.3.1-dist/css/bootstrap.min.css">
+		<script scr="/assets/bootstrap-4.3.1-dist/js/bootstrap.min.js"></script>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<script async src="https://www.googletagmanager.com/gtag/js?id=G-YG4YGWN03V"></script>
+		<script>
+		  window.dataLayer = window.dataLayer || [];
+		  function gtag(){dataLayer.push(arguments);}
+		  gtag('js', new Date());
+
+		  gtag('config', 'G-YG4YGWN03V');
+		</script>
+		<title> Keunwoo Park's Homepage  </title>
+  </head>
+  <body>
+		<div class="layout-content">
+			<link rel=stylesheet type=text/css href="/assets/css/article.css">
+<div class='container'>
+  <div class='main'>
+    <h1 class="text-center mt-5 mb-3"> MagTouch: Robust Finger Identification for a Smartwatch Using a Magnet Ring and a Built-in Magnetometer </h1>
+    <h3 class="text-center"> <p><strong>Keunwoo Park</strong>, Daehwa Kim, Seongkook Heo, Geehyuk Lee</p>
+ </h3>
+    <h3 class="text-center text-muted"> CHI 2020 </h3>
+    
+    <div class="media_div mb-5">
+      
+      <div class="video_div embed-responsive embed-responsive-16by9"> <iframe class="embed-responsive-item" width="560" height="315" src = "https://www.youtube.com/embed/lqnt8fXxamo" frameborder="0" allowfullscreen></iframe></div>
+      
+    </div>
+    
+    <div class="content"><h1 id="abstract">Abstract</h1>
+<p>Completing tasks on smartwatches often requires multiple gestures due to the small size of the touchscreens and the lack of sufficient number of touch controls that are easily accessible with a ﬁnger. We propose to increase the number of functions that can be triggered with the touch gesture by enabling a smartwatch to identify which ﬁnger is being used. We developed MagTouch, a method that uses a magnetometer embedded in an off-the-shelf smartwatch. It measures the magnetic ﬁeld of a magnet ﬁxed to a ring worn on the middle ﬁnger. By combining the measured magnetic ﬁeld and the touch location on the screen, MagTouch recognizes which ﬁnger is being used. The tests demonstrated that MagTouch can differentiate among the three ﬁngers used to make contacts at a success rate of 95.03%.</p>
+
+<h1 id="prototype">Prototype</h1>
+<p>MagTouch can be implemented using any smartwatch equipped with a 9 degrees of freedom IMU (accelerometer, gyroscope, and magnetometer) and a ring with a permanent magnet. The finger in below shows our implementation of MagTouch that used an unmodiﬁed LG Urbane smartwatch.</p>
+
+<p><img src="/assets/img/magtouch/prototype.png" alt="prototype" /></p>
+
+<h1 id="how-magtouch-works">How MagTouch Works</h1>
+
+<p><img src="/assets/img/magtouch/concept.png" alt="concept" /></p>
+
+<p>When a hand wearing a magnet ring touches a smartwatch, the magnetic ﬁeld and the touch location are determined by the contact ﬁnger, as illustrated in the figure above. It shows a user wearing a smartwatch on the left hand and a magnet ring on the middle ﬁnger of the right hand touching the screen. The positions of each ﬁngertip relative to the center of the hand do not change when touching a surface. Therefore, it is possible to identify the touching ﬁnger from the touch location and the position of the center of the hand.</p>
+
+<p>For example, if the touch point is at the left side of the right hand, then the contact was made with the index ﬁnger. We attached a magnet to a hand to get information about the hand’s location using the magnetometer. Figure <em>b</em> and <em>c</em> illustrates that the relative position of the magnet ring shifts when a user touches the smartwatch with a different ﬁnger. This leads to changes in the magnetic ﬁeld vector at the smartwatch’s magnetometer.</p>
+
+<p>Alone, magnetic ﬁeld data is not sufﬁcient for our purposes. Magnetic ﬁeld data can be replicated by different contact ﬁngers, as Figure <em>d</em> and <em>e</em>, unless the touching hand moves. For such cases, touch location data is used to identify the ﬁngers accurately.</p>
+
+<h1 id="challenge-of-implementing-magtouch-and-how-we-solved-it">Challenge of Implementing MagTouch and How We Solved It</h1>
+
+<p><img src="/assets/img/magtouch/detail_concept.png" alt="detail_concept" /></p>
+
+<p>It is necessary to examine the physical model underlying MagTouch to understand the challenges. The magnetic ﬁeld measured by the internal magnetometer of the smartwatch is the sum of the magnetic ﬁeld from the magnet ring and the ambient magnetic ﬁeld. The magnetic ﬁeld from the magnet ring is determined by the position and the orientation of the ring relative to the smartwatch.</p>
+
+<p>This in turn depends on three main variables: which ﬁnger touches the screen, the contact point on the screen, and the relative orientation of the right hand to the left hand. The figure <em>a</em> above illustrates these dependencies. The goal of MagTouch is to infer which ﬁnger is touching the screen from only the touch location and the magnetic ﬁeld measured by the smartwatch magnetometer. This is a challenging inverse problem because of two unknown variables: the ambient magnetic ﬁeld and the relative orientation of the right hand. Figure <em>b</em> illustrates the inverse problem.</p>
+
+<p>The MagTouch method handles the ambient magnetic field using a sub-module called Computational Ambient Magnetic ﬁeld Eliminator (CAME). CAME measures and saves the ambient magnetic ﬁeld when the magnet ring is at distance from the smartwatch, i.e., when the magnetic ﬁeld from the ring is negligible.</p>
+
+<p>For the relative orientation of hands, we used data-driven approach. We used machine learning to handle variations of relative posture of a user’s two hands.</p>
+
+<p><strong>For more detail, please see our paper.</strong></p>
+
+<h1 id="resources">Resources</h1>
+<ul>
+  <li><a href="https://dl.acm.org/doi/abs/10.1145/3313831.3376234">paper</a></li>
+  <li><a href="https://www.youtube.com/watch?v=hLKTkdyygHs">presentation</a></li>
+  <li><a href="https://github.com/KAIST-HCIL/MagTouch">code</a></li>
+</ul>
+</div>
+    
+  </div>
+</div>
+
+		</div>
+	</body>
+  <footer class="mb-5">
+    <a href="/">back to home</a>
+  </footer>
+</html>
