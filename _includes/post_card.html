@@ -1,5 +1,5 @@
 <div class="media mt-2 mb-2 position-relative">
-  <img class="align-self-center thumbnail" src="{{post.thumbnail}}" class="align-self-start mr-3" alt="...">
+  <img class="align-self-center thumbnail" src="{{post.thumbnail | relative_url}}" class="align-self-start mr-3" alt="...">
   <div class="media-body p-3">
     <h5>{{ post.title | safe }}</h5>
     <div class="row">
@@ -12,7 +12,7 @@
     {% if post.is_to_appear %}
     <div class="m-0">{{ "To Appear" }}</div>
     {% else %}
-    <a href="{{post.url}}" class="stretched-link">Project Page</a>
+    <a href="{{post.url | relative_url}}" class="stretched-link">Project Page</a>
     {% endif %}
 
   </div>
