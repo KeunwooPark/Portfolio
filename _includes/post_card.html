@@ -1,0 +1,19 @@
+<div class="media mt-2 mb-2 position-relative">
+  <img class="align-self-center thumbnail" src="{{post.thumbnail}}" class="align-self-start mr-3" alt="...">
+  <div class="media-body p-3">
+    <h5>{{ post.title | safe }}</h5>
+    <div class="row">
+      <h6 class="col-md-auto col-sm-12 text-muted">{{ post.venue | safe}}</h6>
+      {% if post.award %}
+      <h6 class="col-md-auto col-sm-12 award text-capitalize font-italic">{{ include.award | safe }}</h6>
+      {% endif %}
+    </div>
+    <div class="m-0">{{ post.authors | markdownify }}</div>
+    {% if post.is_to_appear %}
+    <div class="m-0">{{ "To Appear" }}</div>
+    {% else %}
+    <a href="{{post.url}}" class="stretched-link">Project Page</a>
+    {% endif %}
+
+  </div>
+</div>
