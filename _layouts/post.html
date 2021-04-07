@@ -1,0 +1,24 @@
+---
+layout: default
+---
+<link rel=stylesheet type=text/css href="/assets/css/article.css">
+<div class='container'>
+  <div class='main'>
+    <h1 class="text-center mt-5 mb-3"> {{page.title | safe}} </h1>
+    <h3 class="text-center"> {{page.authors | markdownify}} </h3>
+    <h3 class="text-center text-muted"> {{page.venue | safe}} </h3>
+    {% if page.award %}
+    <h3 class="text-center text-capitalize font-italic award">{{ page.award | safe }}</h3>
+    {% endif %}
+    <div class="media_div mb-5">
+      {% if page.video_embed_link %}
+      <div class="video_div embed-responsive embed-responsive-16by9"> <iframe class="embed-responsive-item" width="560" height="315" src = "{{page.video_embed_link}}" frameborder="0" allowfullscreen></iframe></div>
+      {% endif %}
+    </div>
+    {% if page.is_to_appear %}
+    <div class="content">To appear at {{page.venue | safe}}</div>
+    {% else %}
+    <div class="content">{{content}}</div>
+    {% endif %}
+  </div>
+</div>

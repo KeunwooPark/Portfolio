@@ -1,0 +1,97 @@
+/*body  { font-family: 'Raleway', sans-serif; background: #a442f4; margin: 200px; line-height: 150%;}*/
+/*.main {background: #ebeaed; padding: 5em}
+.item {padding: 0.33em}
+*/
+.masthead {
+  height: 40vh;
+  min-height: 210px; /* this should be matched with image height*/
+  width: 100%;
+  background-image: url('../img/background.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.profile {
+  padding: 0px;
+  width: 90%;
+}
+
+.no-gutters {
+  margin-right: 0;
+  margin-left: 0;
+
+  > .col,
+  > [class*="col-"] {
+    padding-right: 0;
+    padding-left: 0;
+  }
+}
+
+.social-icon {
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0px;
+  max-width:80%;
+
+}
+
+.introduce {
+  background-color: #ffffff;
+  z-index: 1;
+  position: relative;
+  margin: -10vh auto 0;
+}
+
+.award {
+  color: deeppink;
+}
+
+img.thumbnail
+{
+  max-width: 100px;
+}
+
+p {
+  margin-bottom: 0;
+}
+
+/* Large devices (desktops, less than 1200px) */
+@media screen and (max-width: 1199.98px) {
+  body {
+    /*background-color: olive;*/
+  }
+}
+
+/* Medium devices (tablets, less than 992px) */
+@media screen and (max-width: 991.98px) {
+  body {
+    /*background-color: blue;*/
+  }
+}
+
+/* Small devices (landscape phones, less than 768px) */
+@media screen and  (max-width: 767.98px) {
+  html
+  {
+    font-size: 90%;
+  }
+  body {
+    /*background-color: red;*/
+  }
+}
+
+/*Extra small devices (portrait phones, less than 576px)*/
+@media screen and (max-width: 575.98px) {
+  h1.display-2
+  {
+    font-size: 350%;
+  }
+  html
+  {
+    font-size: 85%;
+  }
+  body {
+    /*background-color: Orange;*/
+  }
+}

@@ -1,0 +1,14 @@
+footer {
+    clear: both;
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+/* unvisited link */
+a:link {
+  color: deeppink;
+}
+
+a:visited {
+  color: purple;
+}
