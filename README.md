@@ -1,6 +1,9 @@
 # Portfolio
 My portfolio website
 
+## Install
+Install [Ruby and Jekyll](https://jekyllrb.com/docs/installation/). 
+
 ## How to Add a Post?
 
 1. Create a file in _posts. Images should be in assets/img/{project name}/.
