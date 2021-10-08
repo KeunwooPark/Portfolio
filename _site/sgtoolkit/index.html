@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href=/assets/css/header_footer.css>
+		<script src="//code.jquery.com/jquery-3.2.1.min.js"></script>
+		<link rel="stylesheet" href=/assets/bootstrap-4.3.1-dist/css/bootstrap.min.css>
+		<script scr=/assets/bootstrap-4.3.1-dist/js/bootstrap.min.js></script>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<script async src="https://www.googletagmanager.com/gtag/js?id=G-YG4YGWN03V"></script>
+		<script>
+		  window.dataLayer = window.dataLayer || [];
+		  function gtag(){dataLayer.push(arguments);}
+		  gtag('js', new Date());
+
+		  gtag('config', 'G-YG4YGWN03V');
+		</script>
+		
+  </head>
+  <body>
+		<div class="layout-content">
+			<title> SGToolkit: An Interactive Gesture Authoring Toolkit for Embodied Conversational Agents </title>
+<link rel=stylesheet type=text/css href=/assets/css/article.css>
+<div class='container'>
+  <div class='main'>
+    <h1 class="text-center mt-5 mb-3"> SGToolkit: An Interactive Gesture Authoring Toolkit for Embodied Conversational Agents </h1>
+    <h3 class="text-center"> <p>Youngwoo Yoon*, <strong>Keunwoo Park</strong>*, Minsu Jang, Jaehong Kim, Geehyuk Lee</p>
+ </h3>
+    <h3 class="text-center text-muted"> UIST 2021 </h3>
+    
+    <div class="media_div mb-5">
+      
+      <div class="video_div embed-responsive embed-responsive-16by9"> <iframe class="embed-responsive-item" width="560" height="315" src = "https://www.youtube.com/embed/xmFsT_e2BXw" frameborder="0" allowfullscreen></iframe></div>
+      
+    </div>
+    
+    <div class="content"><h1 id="abstract">Abstract</h1>
+<p>Non-verbal behavior is essential for embodied agents like social robots, virtual avatars, and digital humans. Existing behavior authoring approaches including keyframe animation and motion capture are too expensive to use when there are numerous utterances requiring gestures. Automatic generation methods show promising results, but their output quality is not satisfactory yet, and it is hard to modify outputs as a gesture designer wants. We introduce a new gesture generation toolkit, named SGToolkit, which gives a higher quality output than automatic methods and is more efficient than manual authoring. For the toolkit, we propose a neural generative model that synthesizes gestures from speech and accommodates fine-level pose controls and coarse-level style controls from users. The user study with 24 participants showed that the toolkit is favorable over manual authoring, and the generated gestures were also human-like and appropriate to input speech. The SGToolkit is platform agnostic, and the code is available at this <a href="https://github.com/ai4r/SGToolkit">https URL</a>.</p>
+
+<h1 id="why-do-we-need-new-approach-to-generate-gestures-for-speeches">Why do we need new approach to generate gestures for speeches?</h1>
+
+<p>It is not trivial to make plausible non-verbal behavior for the agents. Typical ways to realize social behaviors are keyframe animation by artists or capturing human actors’ motion. Both methods give high-quality motions but there is a scalability issue due to their high production cost. Experienced animation artists are needed for the keyframe animation, and the motion capture method requires expensive capturing devices and skilled actors. There is a need for a cheaper solution.</p>
+
+<p>The cheapest way to generate social behavior is automatic generation; it does not require a human effort at the production time. There are two automatic gesture generation toolkits—Virtual Humans Toolkit from USC and NAOqi from SoftBank Robotics; however, both toolkits are not widely used because they are dependant on a specific platform and heavily relies on pre-described word–gesture association rules. Also, the gesture quality of the automatic gesture generation toolkits is not high enough, showing repetitive and monotonic motion and unnatural transitions between gestures. Recent data-driven gesture generation studies improved gesture qualities, but are still far behind human-level gestures. Another limitation of the data-driven gesture generation is that it cannot imply a designer’s intention. Even if generated gestures are as natural as human gestures, they might not be what a designer wants.</p>
+
+<h1 id="concept">Concept</h1>
+
+<p>The key idea of the new gesture generation toolkit is combining automatic gesture generation and manual controls. The below figure shows the workflow of the proposed toolkit. The toolkit first generates gestures from speech automatically, and then users add control elements to refine the gestures. The toolkit provides fine-level pose control and coarse-level style control elements.</p>
+
+<p><img src="/assets/img/sgtoolkit/concept.png" alt="concept" /></p>
+
+<p><strong>For more details of the gesuture generation and evaluation, please see our paper.</strong></p>
+
+<h1 id="resources">Resources</h1>
+<ul>
+  <li><a href="https://arxiv.org/abs/2108.04636">paper</a></li>
+  <li><a href="">short talk</a></li>
+</ul>
+</div>
+    
+  </div>
+</div>
+
+		</div>
+	</body>
+  <footer class="mb-5">
+    <a href="/">back to home</a>
+  </footer>
+</html>
