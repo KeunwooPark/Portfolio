@@ -1,6 +1,9 @@
 # Portfolio
 My portfolio website
 
+## Install
+Install [Ruby and Jekyll](https://jekyllrb.com/docs/installation/). 
+
 ## How to Add a Post?
 
 1. Create a file in _posts. Images should be in assets/img/{project name}/.
@@ -9,4 +12,14 @@ My portfolio website
 ## Run Jekyll
 ``` shell
 $ jekyll serve
+```
+
+## Troublshooting
+
+
+### Could not find rb-fsevent-0.10.4 in any of the sources (Bundler::GemNotFound)
+``` shell
+bundle install
+bundle update
+bundle exec jekyll build
 ```

@@ -13,3 +13,13 @@ Install [Ruby and Jekyll](https://jekyllrb.com/docs/installation/).
 ``` shell
 $ jekyll serve
 ```
+
+## Troublshooting
+
+
+### Could not find rb-fsevent-0.10.4 in any of the sources (Bundler::GemNotFound)
+``` shell
+bundle install
+bundle update
+bundle exec jekyll build
+```
