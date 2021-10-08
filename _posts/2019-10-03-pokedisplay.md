@@ -6,7 +6,7 @@ permalink: /pokedisplay/
 thumbnail: /assets/img/pokedisplay/thumbnail.jpg
 publish_date: 2019-10-03
 
-venue: UIST 2020
+venue: MobileHCI 2020
 authors: "Youngbo Aram Shim, **Keunwoo Park**, Geehyuk Lee"
 to_appear: no
 award: Honorable Mention Award
