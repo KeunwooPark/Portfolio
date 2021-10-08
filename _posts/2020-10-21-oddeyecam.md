@@ -58,6 +58,10 @@ We created several applications to show various design possibilities of OddEyeCa
 - [short talk](https://youtu.be/rsiCohRoFYI)
 - [long talk](https://youtu.be/u6xvk0dM8fo)
 - [code](https://github.com/KAIST-HCIL/OddEyeCam)
+
 # My Contributions
 
-I participated in the ideation of this project. Also, I provided advices related to the implementation, experiment design and paper writing.
+I participated in
+- project ideation
+- sensing algorithm design
+- user study design and its software implementation

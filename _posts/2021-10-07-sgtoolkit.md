@@ -33,3 +33,9 @@ The key idea of the new gesture generation toolkit is combining automatic gestur
 # Resources
 - [paper](https://arxiv.org/abs/2108.04636)
 - [short talk]()
+
+# My contributions
+I participated in
+- expert interview
+- interface design and impelemtation
+- user study design
