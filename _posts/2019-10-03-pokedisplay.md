@@ -6,7 +6,7 @@ permalink: /pokedisplay/
 thumbnail: /assets/img/pokedisplay/thumbnail.jpg
 publish_date: 2019-10-03
 
-venue: MobileHCI 2020
+venue: MobileHCI 2019
 authors: "Youngbo Aram Shim, **Keunwoo Park**, Geehyuk Lee"
 to_appear: no
 award: Honorable Mention Award
@@ -32,8 +32,7 @@ Please see the paper from [ACM DL](https://doi.org/10.1145/3338286.3340134) for 
 
 # My Contributions
 
-List of the things that I partially contributed.
-
-- Modeling and 3D printing the prototype.
-- Designing the experiments.
-- Implementing the software for Experiment 3.
+I participated in
+- modeling and 3D printing the prototype.
+- designing the experiments.
+- implementing the software for Experiment 3.
