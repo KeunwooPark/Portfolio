@@ -32,8 +32,8 @@ The key idea of the new gesture generation toolkit is combining automatic gestur
 
 # Resources
 - [paper](https://arxiv.org/abs/2108.04636)
-- [short talk]() (to appear)
-- [demo](https://youtu.be/C-8kGlkYpl4)
+- [talk](https://youtu.be/qClSOtLiVlc)
+- [demo](https://youtu.be/qsK3p1S_K48)
 
 # My contributions
 I participated in
