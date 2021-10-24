@@ -63,5 +63,4 @@ We created several applications to show various design possibilities of OddEyeCa
 
 I participated in
 - project ideation
-- sensing algorithm design
-- user study design and its software implementation
+- accuracy test design and its software implementation
