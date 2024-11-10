@@ -35,9 +35,11 @@
     </div>
     
     <div class="content"><h1 id="abstract">Abstract</h1>
+
 <p>Near-surface multi-finger tracking (NMFT) technology expands the input space of touchscreens by enabling novel interactions such as mid-air and finger-aware interactions. We present DeepFisheye, a practical NMFT solution for mobile devices, that utilizes a fisheye camera attached at the bottom of a touchscreen. DeepFisheye acquires the image of an interacting hand positioned above the touchscreen using the camera and employs deep learning to estimate the 3D position of each fingertip. We created two new hand pose datasets comprising fisheye images, on which our network was trained. We evaluated DeepFisheye’s performance for three device sizes. DeepFisheye showed average errors with approximate value of 20 mm for fingertip tracking across the different device sizes. Additionally, we created simple rule-based classifiers that estimate the contact finger and hand posture from DeepFisheye’s output. The contact finger and hand posture classifiers showed accuracy of approximately 83 and 90%, respectively, across the device sizes.</p>
 
 <h1 id="technical-concept">Technical Concept</h1>
+
 <p><img src="/assets/img/deepfisheye/technical_concept.png" alt="prototype" /></p>
 
 <p>DeepFisheye pipeline first preprocesses a fisheye image, and then estimates the 3D locations of all hand joints with DeepFisheye network (DeepFisheyeNet). Then, two rule-based classifiers classify contact fingers and hand postures.</p>
@@ -57,8 +59,10 @@
 <p><strong>For more detail, please see our paper.</strong></p>
 
 <h1 id="resources">Resources</h1>
+
 <ul>
-  <li><a href="https://dl.acm.org/doi/10.1145/3379337.3415818">paper</a></li>
+  <li><a href="https://dl.acm.org/doi/10.1145/3379337.3415818">paper (ACM DL)</a></li>
+  <li><a href="/assets/DeepFisheye_CR.pdf">paper (author version)</a></li>
   <li><a href="https://youtu.be/5gbf8Vztjzc">short talk</a></li>
   <li><a href="https://youtu.be/8W3OpxIXpQg">long talk</a></li>
   <li><a href="https://youtu.be/thmtBKEazxw">demo</a></li>
