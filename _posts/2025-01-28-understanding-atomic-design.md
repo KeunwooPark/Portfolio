@@ -1,0 +1,425 @@
+---
+layout: blog_post
+title: "아토믹 디자인 (Atomic Design) 이해하기"
+permalink: /blog/understanding-atomic-design/
+publish_date: 2025-01-28
+excerpt: "우리 회사는 작은 영유아 놀이 서비스 스타트업이다. 그 중 소프트웨어팀은 놀이 정보를 제공하는 앱과 편리한 서비스 구매 경험 제공을 목적으로 하는 웹을 만들고 있다. 이렇게 두 개의 메인 서비스를 두 명의 개발자와 한 명의 디자이너가 만들고 있다. 팀의 규모는 작지만 우리는 디자인 시스템을 만들고 운영하고 관리하고 있다. 하지만 이 과정에서 많은 어려움이..."
+categories: [blog]
+---
+<p>우리 회사는 작은 영유아 놀이 서비스 스타트업이다. 그 중 소프트웨어팀은 놀이 정보를 제공하는 앱과 편리한 서비스 구매 경험 제공을 목적으로 하는 웹을 만들고 있다. 이렇게 두 개의 메인 서비스를 두 명의 개발자와 한 명의 디자이너가 만들고 있다. 팀의 규모는 작지만 우리는 디자인 시스템을 만들고 운영하고 관리하고 있다. 하지만 이 과정에서 많은 어려움이 있고, 이것들을 해결하기 위해서 자료를 찾아보다 아토믹 디자인에 대해서 알게 되었다. 어떻게 하면 디자인 시스템을 잘 만들까 고민이 많았는데 이번 기회에 아토믹 디자인에 대해서 공부를 해봐야겠다 생각을 했고 이 글에서는 공부한 것을 정리 한다.</p>
+
+
+
+<h2 class="wp-block-heading">작은 팀도 디자인 시스템을 만들어야 한다</h2>
+
+
+
+<p>세 명 밖에 안되는 팀인데 왜 디자인 시스템에 대해서 고민 하는지 의아할 수도 있다. 먼저 작은 팀이라도 디자인 시스템을 만들어야 하는 이유에 대한 나의 생각을 이야기 하고자 한다. 디자인 시스템이 필요한 이유와 직접 만들어야 하는 이유는 다른데 나는 혼자 하나의 서비스를 만드는게 아니라면 디자인 시스템은 필요하고 직접 만드는 것이 좋다고 생각 한다</p>
+
+
+
+<p>디자인 시스템이 필요한 이유에 대해서 먼저 이야기 해보자. 만드는 사람의 측면에서 생각해보겠다. 하나의 서비스를 두 명 이상이 만들게 되면 어떤 인터페이스를 구현 할 때 특정 컴포넌트가 이미 구현이 되어 있는지 알고 싶고 구현 되어 있으면 가져다 사용 하고 싶을 것이다. 이렇게 컴포넌트 레벨에서 효율적으로 의사 소통을 하려면 인터페이스의 어떤 패턴을 컴포넌트로 미리 구현을 해 둘 것인지 약속을 해야 한다. 이것이 디자인 시스템이다. 여러 서비스를 개발 한다는 측면에서 생각해 보면 이미 다른 서비스에서 구현한 컴포넌트를 그대로 가져와서 사용하는 것이 효율적일 것이다. 이를 하려면 역시 공통의 컴포넌트를 정의하는 일이 선행 되어야 하고 이것 역시 디자인 시스템을 만드는 일과 같다.</p>
+
+
+
+<p>디자인 시스템을 직접 만들어야 하는 이유는 다음과 같다. 오픈되어 있는 디자인 시스템들은 어디에든 사용 할 수 있어야 하기 때문에 지나치게 자유도가 높다. <a href="https://m3.material.io/">Material Design</a>이나 <a href="https://daisyui.com/">daisyUI</a>등 오픈소스 디자인 시스템들을 보면 버튼, 텍스트 입력 등 정말 기본적인 컴포넌트들만이 존재 한다. 이것들을 조합해서 우리 서비스에 맞는 상위 레벨의 컴포넌트들을 정의 해야 하는데 그것을 하는것이 사실상 디자인 시스템을 만드는 일이다.</p>
+
+
+
+<h2 class="wp-block-heading">Atomic Design by Brad Frost</h2>
+
+
+
+<p>이 섹션은 <a href="https://atomicdesign.bradfrost.com/table-of-contents/">Brad Frost 의 Atomic Design</a> 이라는 짧은 책을 읽고 정리 하였다. 챕터 3은 특정 툴에 대한 내용이라 요약에서 제외했다.</p>
+
+
+
+<h3 class="wp-block-heading">Ch 1. Designing Systems</h3>
+
+
+
+<p>첫 챕터는 디자인 시스템의 필요성에 대해서 이야기 한다. 홈페이지가 5개의 페이지만 있다면 만드는데 큰 어려움은 없을 수 있지만 만약 3만개의 페이지가 있다면 모든 페이지를 일일이 만드는게 굉장히 어려울 것이다. 이러한 문제를 해결하기 위해서 이 책에서는 모듈성(modularity)을 이야기 한다. 페이지를 만드는 것이 아니라 모듈을 만들고 모듈을 조합해서 페이지를 구성 하는 것이다.</p>
+
+
+
+<p>모듈성은 여러 가지 장점을 가진다. 첫째, 시스템의 유지 보수를 쉽게 한다. 소프트웨어를 업데이트 한다고 할 때 매번 전체 인터페이스를 처음부터 다시 디자인 하고 구현하는 것은 매우 비효율적이다. 소프트웨어가 모듈화 되어 있으면 부분별로 지속적으로 업데이트 해 나갈 수 있다. 둘째, 비슷한 이유인데 iterative process를 적용 할 수 있다. 수정하는 단위가 작기 때문에 가능한 일이다. 작은 단위로 수정하고, 테스트하고, 사용자의 반응을 살핀다.</p>
+
+
+
+<p>여기서 이야기 하는 모듈화는 단순히 스타일적인 모듈화가 아니라 코드 레벨에서의 모듈화도 의미 한다. 이 책에서는 주로 자바스크립트, CSS에 대한 이야기를 하는데 요즘 많이 사용하는 React 역시 모듈화를 쉽게 사용 할 수 있는 프레임워크이고 아토믹 디자인을 적용하기 좋은 프레임워크라 할 수 있다. 당연히 스타일을 모듈화 하는 것도 장점이 있는데 디자이너 입장에서 작은 단위의 인터페이스를 테스트 할 수 있기 때문에 더 다양한 옵션들을 테스트 하면서 더 좋은 디자인 솔루션을 찾아 낼 수 있다.</p>
+
+
+
+<p>이 챕터에서는 위에서 내가 이야기 한 것과 조금 다른 방향으로 기존의 디자인 시스템 프레임워크(예: <a href="https://getbootstrap.com/">Bootstrap</a>)를 사용하는 것의 단점에 대해서 이야기 하면서 왜 직접 디자인 시스템을 구축해야 하는지 이야기 한다. 결국 각자 만드는 시스템은 다 다르고 이미 존재하는 프레임워크는 만들려는 시스템에 적합하지 않을 수 있다. 예를 들어 컴포넌트의 이름이나 구조등이 적합하지 않게 설정 되어 있을 수 있다. 더불어서 모두가 다 현존하는 프레임워크를 사용한다면 모든 시스템들이 비슷해 보일 것이고 브랜드의 개성이 보이지 않을 수 있다. 참고로 우리 회사는 내가 들어오기 전부터 이미 브랜드가 있었고 내가 새롭게 소프트웨어를 만드는 상황이었지만 어느 정도는 기존의 브랜드를 존중하고 유지할 필요가 있었다. 기존에 판매하고 있던 놀잇감과 어느 정도는 연결이 되어야 했기 때문이다.</p>
+
+
+
+<p>디자인 시스템은 브랜드의 정체성을 나타낼 수 있고, 제품을 만드는데 효율성을 높이는 디자인 언어를 제공하며, UX writing에 대한 가이드 까지 제공 할 수 있다. 시스템 내부에 존재하는 스타일 가이드는 소프트웨어 전반에 일관된 디자인을 쉽게 적용 할 수 있게 하고, 동일한 용어를 사용하게 하면서 팀 내 커뮤니케이션을 원활하게 해준다. 예를 들어서 누군가는 '대표 이미지'라고 부르는 것을 누군가는 '히어로 이미지' 라고 부를 수 있다. 디자인 시스템으로 정해진 규칙은 이런 혼선을 막아준다.</p>
+
+
+
+<p>나는 디자인 시스템에서 방점은 디자인이 아니라 시스템에 있다고 생각 한다. 이 챕터에 있는 아래 인용구와 일맥 상통 하는 이야기다.</p>
+
+
+
+<blockquote class="wp-block-quote">
+<p><em>We’re not designing pages, we’re designing systems of components. - </em><a href="http://bradfrost.com/blog/mobile/bdconf-stephen-hay-presents-responsive-design-workflow/">Stephen Hay</a></p>
+</blockquote>
+
+
+
+<h3 class="wp-block-heading">Ch 2. Atomic Design Methodology</h3>
+
+
+
+<p>이 챕터 부터가 핵심적인 내용을 담고 있다. 아토믹 디자인은 개념적으로는 정말 간단하다. 화학의 원자와 화합물의 개념을 차용한다. 수소 원자와 산소 원자가 만나면 물이 되는것 처럼 아토믹 디자인에서는 atom이 모여서 molecule를 만든다. 총 다섯 계층의 요소들이 존재 한다.</p>
+
+
+
+<ul class="wp-block-list">
+<li>Atoms</li>
+
+
+
+<li>Molecules</li>
+
+
+
+<li>Organisms</li>
+
+
+
+<li>Templates</li>
+
+
+
+<li>Pages</li>
+</ul>
+
+
+
+<div class="wp-block-group">
+<div class="wp-block-group">
+<figure class="wp-block-image size-large is-resized"><a href="https://atomicdesign.bradfrost.com/images/content/chemical-equation.png"><img src="https://atomicdesign.bradfrost.com/images/content/chemical-equation.png" alt="" class="wp-image-237" style="width:498px;height:auto" /></a><figcaption class="wp-element-caption"><a href="https://atomicdesign.bradfrost.com/images/content/chemical-equation.png">https://atomicdesign.bradfrost.com/images/content/chemical-equation.png</a></figcaption></figure>
+</div>
+
+
+
+<figure class="wp-block-image size-large is-resized"><a href="https://atomicdesign.bradfrost.com/images/content/atomic-design-process.png"><img src="https://atomicdesign.bradfrost.com/images/content/atomic-design-process.png" alt="" class="wp-image-239" style="width:458px;height:auto" /></a><figcaption class="wp-element-caption"><a href="https://atomicdesign.bradfrost.com/images/content/atomic-design-process.png">https://atomicdesign.bradfrost.com/images/content/atomic-design-process.png</a></figcaption></figure>
+</div>
+
+
+
+<p>atom은 HTML 기본 요소와 같이 더 이상 쪼갤 수 없는 인터페이스의 가장 작은 단위를 의미한다. molecule은 atom을 조합해서 만드는 패턴을 의미 하는데 예를 들어 텍스트 입력과 버튼을 조합한 컴포넌트가 될 수 있다. molecule은 <a href="https://en.wikipedia.org/wiki/Single-responsibility_principle">single-responsibility principle</a> 를 유지 하는 것을 권장한다. 이 원칙은 molecule은 하나의 기능만을 수행해야 하고 그것을 잘 수행 해야 한다는 원칙이다. organism은 molecule을 조합해서 만든 컴포넌트인데 네비게이션 바가 그 예시가 된다. 보통 네비게이션 바는 여러 개의 버튼들이 존재하고 간혹 텍스트 입력까지 가지는 경우가 있다. </p>
+
+
+
+<p>그 다음은 template인데 여기는 그리 특별할 것은 없다. 우리가 일반적으로 생각하는 템플렛인데 레이아웃이라고 부르는 경우도 있다. 구체적인 컨텐츠가 들어가지 않은 틀 인데 organism의 조합으로 이루어져 있다고 보면 된다. 템플릿을 잘 설계해야 하는 이유는 컨텐츠가 없는 상태에서 컨텐츠의 구조만을 가지고도 사용자가 쉽게 이해하고 이용 할 수 있는 페이지를 만드는 것이 필요하기 때문이다. 컨텐츠가 없는 상태에서도 잘 설계된 인터페이스는 컨텐츠가 채워지더라도 별 문제가 없을 것이다. 마지막으로 페이지는 컨텐츠가 모두 채워진 완성된 하나의 페이지를 의미한다. 아래 이미지는 아토믹 디자인의 다섯가지 계층을 함축적으로 잘 표현한다.</p>
+
+
+
+<figure class="wp-block-image size-large"><a href="https://atomicdesign.bradfrost.com/images/content/instagram-atomic.png"><img src="https://atomicdesign.bradfrost.com/images/content/instagram-atomic.png" alt="" class="wp-image-242" /></a><figcaption class="wp-element-caption"><a href="https://atomicdesign.bradfrost.com/images/content/instagram-atomic.png">https://atomicdesign.bradfrost.com/images/content/instagram-atomic.png</a></figcaption></figure>
+
+
+
+<p>아토믹 디자인은 여러 장점들이 있다. 아토믹 디자인은 추상적인 레벨에서 구체적인 레벨까지 각 단계를 쉽게 넘나들 수 있게 한다. 이것이 중요한 이유는 디자인 프로세스가 선형적이지 않기 때문이다. atom을 만들다가도 template을 만들 수 있고 page를 만들다가 organism을 수정해야 하는 경우가 생길 수 있다. 이렇게 구체적인 부분과 추상적인 부분을 지속적으로 넘나들면서 작업해야 하는것이 디자인의 특성인데 아토믹 디자인은 디자인 프로세스에 계층을 만듦으로서 손쉽게 이런 비선형적인 디자인 프로세스를 진행 할 수 있게 한다. 이 글에서는 비선형적인 디자인을 그림 그리는 프로세스에 비유를 한다. 그림을 그릴때도 전체 구도를 잡았다가 디테일한 부분을 그리고 다시 뒤로 떨어져서 전체 캔버스의 조화를 본다. 디자인도 마찬가지인데 아토믹 디자인은 캔버스로 부터 얼만큼 떨어져서 보면 좋다는 것을 알려주는 가이드 역할을 하는 것이다.</p>
+
+
+
+<p>또한 아토믹 디자인은 구조와 컨텐츠를 분리해서 생각 하게 한다. 나는 이 글이 이 장점에 대해서 충분이 명확하게 설명하지는 않는다고 생각한다. 내 나름대로 이해한 것으로 설명 하자면 컨텐츠와 구조는 서로 얽혀 있는 닭과 달걀과 같은 존재이다. 컨텐츠에 따라서 구조를 설계해야 하고, 구조에 따라서 컨텐츠를 만들어야 하기 때문이다. 어찌 되었든 사용자 경험에 영향을 미치는 중요한 두 요소임에는 틀림이 없고, 아토믹 디자인은 이 둘을 명확하게 구분 하므로서 어느 시점에서 문제를 바라봐야 하는지 view point를 제공해 준다고 생각한다.</p>
+
+
+
+<h3 class="wp-block-heading">Ch 4. The Atomic Workflow</h3>
+
+
+
+<p>이 챕터는 프로세스에 대해 주로 다룬다. 당장 디자인 시스템을 만들기를 강조 하면서 그 과정은 복잡할 수 밖에 없다고 이야기 한다. 개인적으로 인상적인 것은 interface inventory를 만드는 과정이었다. 디자인 시스템을 만들기 위한 첫 단계로 소개를 하는데 이는 모든 페이지에 있는 인터페이스를 모으고 여기에서 패턴들을 찾아 내는 것이다. 그리고 이 패턴들을 가지고 디자인 시스템을 만든다. 이 글에서는 interface inventory의 장점으로 네 가지를 이야기 하고 있다. </p>
+
+
+
+<ul class="wp-block-list">
+<li>Captures all patterns and their inconsistencies</li>
+
+
+
+<li>Gets organizational buy-in</li>
+
+
+
+<li>Establishes a scope of work</li>
+
+
+
+<li>Lays the groundwork to a sound interface design system</li>
+</ul>
+
+
+
+<p>interface inventory는 디자인 시스템을 만드는 방법을 top-down 방식으로만 생각 하고 있었던 나에게 꽤나 인상적이었다. top-down 방식은 화면을 구성하기 전에 컴포넌트들을 구성 하거나 화면에서 패턴을 찾더라도 이미 구성된 컴포넌트들의 틀 안에서만 찾는 방식이다. 즉 하위 레벨의 구조를 한번 만들어 놓고 잘 바꾸려 하지 않았다. 하지만 이 방식은 비선형적인 디자인 프로세스를 무시하는 방법이다. 디자인 과정에서 기존의 다양한 레벨의 구조를 깨고 다시 만들어야 하는 경우가 생기는데 나는 그것을 최대한 하지 않으려고 했었다. 특정 시점에 디자인의 일관성이 떨어진다거나 디자인 시스템이 비효율적이라고 느껴진다면 bottom-up, 즉 화면들에서 패턴을 찾는 접근을 통해 하위 레벨의 구조를 수정해야 할 필요가 있다.</p>
+
+
+
+<p>이 챕터는 디자인 프로세스는 waterfall 방식이 되서는 안된다고 이야기 한다. 책에서는 길게 이야기 하지만 이는 당연한 이야기 인 것이 디자인 프로세스 자체가 비선형적이기 때문에 선형적인 waterfall 방식으로 프로젝트를 진행 할 경우 문제가 생길 수 밖에 없다.  책에서는 UX 디자인, 비주얼 디자인, 개발은 모두 같이 이루어져야 한다고 이야기 한다. 그렇다고 해서 모두가 매번 같은 수준으로 몰입 해야 한다는 것은 아니다. 단계에 따라서 더 많은 일을 하는 파트가 있고 그렇지 않은 파트가 있을 수 있다.</p>
+
+
+
+<p>인상적인 것은 이 챕터에서 개발도 디자인이라고 이야기를 하는 것이다. 저자는 HTML, CSS는 프로그래밍언어가 아니고 그래도 코드이긴 하지만 여타 언어들과는 많이 다르다고 이야기를 한다. 이것들 역시 디자인을 위한 도구일 뿐이라는 것이다. 그러면서 일반적인 회사에서 디자인팀과 개발 팀이 완전히 분리되어 있는 구조를 비판한다. </p>
+
+
+
+<p>여기서 나의 생각을 조금 덧붙이자면, 나는 개발자 (적어도 front-end 개발을 한다면) 디자인에 대해서 알아야 하고 디자이너는 개발에 대해서 알아야 한다고 생각한다. 그 이유는 너무나도 당연한것이 애초에 디자인 프로세스 자체가 비선형적 방식이라 이 둘의 경계가 깔끔하게 나누어지지 않기 때문이다. 이 둘이 섞인 논의를 하는 경우가 많다. 또한, 개발자는 결국 마지막 터치를 하는 사람인데 사용성과 같은 디자인 개념에 대해서 전혀 모르는 것 보다 조금이라도 알고 있는 것이 더 좋은 프로덕트를 만들 수 있게 한다고 생각 한다. 자신이 무엇을 만드는지 이해하고 하는 사람과 모르고 하는 사람의 결과물은 많이 다르다. 마지막으로 디자이너 입장에서 보았을때, 디자이너는 항상 두 그룹의 고객이 있다. 하나는 실제 사용자고 다른 하나는 개발자이다. 그렇다면, 당연히 개발자 입장에서 자신의 디자인 결과물을 검토해야 하고 개발자 입장에서 바라보려면 개발에 대한 이해가 있어야 한다.</p>
+
+
+
+<p>꽤나 친절하게도 이 챕터에서는 구체적으로 어떻게 디자인 시스템의 방향성을 잡아야 하는지 이야기 한다. 먼저 템플릿을 작업한다. 이는 어떤 정보가 화면의 어디에 배치 되어야 하는지를 디자인 하는 것인데 정보 구조를 논리적인 관점과 시각적인 관점으로 설계하는 것으로 볼 수 있다. 그 후에 시각적인 컨셉을 잡는데, 저자는 20-second gut test 라는 것을 소개 한다. 이는 다양한 웹사이트들을 보고 직관에 의존하여 선호도를 평가 하는 것이다. 각자 평가 후에 높은 점수를 받은 것들과 낮은 점수를 받은 것들을 그룹핑하고 각각에 대한 이유를 설명한다. 이 과정을 통해서 팀 내에서 어떤 시각적 방향성을 추구 하는지 파악 할 수 있다. 그 후에는 style tile을 만드는 작업으로 넘어간다. style tile은 어떤 색을 쓸 것인지, 아이콘은 무엇이 있어야 하고 타이포그래피는 무엇을 쓸지 등을 하나의 페이지에 정리 한 것을 말한다. style tile이 완성되면 비슷하게 element collage를 만든다. 이는 다양한 컴포넌트들을 모아서 한번에 볼 수 있는 콜라주를 말한다. elementn collage는 실제 소프트웨어를 완성하기 전에 대략 어떤 느낌이 들지 미리 확인 할 수 있게 해준다. 이렇게 시각적인 방향성을 잡아 나아가면서 디자인 시스템을 완성해 나아간다.</p>
+
+
+
+<p>시스템을 만드는 과정에 대해서도 이 챕터에서는 저자가 참여한 TechCrunch 웹사이트 프로젝트를 예시로 설명 한다. 이 부분에서 인상적인 인용을 보았다.</p>
+
+
+
+<blockquote class="wp-block-quote">
+<p><em>Let’s change the phrase “designing in the browser” to “deciding in the browser.” - </em><a href="https://the-pastry-box-project.net/dan-mall/2012-september-12">Dan Mall</a></p>
+</blockquote>
+
+
+
+<p>결국 최종 결과물은 소프트웨어로 구현 된 결과물이다. 그렇기 때문에 디자인에 대한 피드백 역시 구현이 된 상태에서도 이루어져야 한다는 것이다. 구현 해 보았을 때 문제가 있다면 다시 디자인을 수정하고 다시 구현해야 한다. 다시 한번 강조하지만 이 과정은 iterative process이다.</p>
+
+
+
+<h3 class="wp-block-heading">Ch 5. Maintaining Design Systems</h3>
+
+
+
+<p>만드는 것 만큼 유지하는 것이 중요하다. 이 책의 마지막 챕터는 디자인 시스템 유지 보수에 대해 이야기 한다. 저자는 <em>design system first</em> 를 주장하는데 이는 웹사이트와 라이브러리 상단에 디자인 시스템이 위치하고 팀은 디자인 시스템을 통해서 최종 프로덕트와 라이브러리에 영향을 미쳐야 한다는 개념이다. 이런 구조의 장점은 프로덕트를 업데이트를 하기 위해서는 라이브러리를 업데이트 할 수 밖에 없도록 만든다는 것이다. 만약 프로덕트와 라이브러리를 따로 업데이트를 하게 된다면 보통은 라이브러리 업데이트를 미루게 되면서 점점 쓸모가 없어지게 된다.</p>
+
+
+
+<figure class="wp-block-image size-large"><a href="https://atomicdesign.bradfrost.com/images/content/workflow-system-first.png"><img src="https://atomicdesign.bradfrost.com/images/content/workflow-system-first.png" alt="" class="wp-image-243" /></a><figcaption class="wp-element-caption"><a href="https://atomicdesign.bradfrost.com/images/content/workflow-system-first.png">https://atomicdesign.bradfrost.com/images/content/workflow-system-first.png</a></figcaption></figure>
+
+
+
+<p>내 생각에 위의 책에서 발췌한 그림은 정확하게 라이브러리와 제품의 관계를 표현하지 못한다고 생각해서 아래와 같이 다시 그려 보았다. 내가 이해하기로는 디자인 시스템은 좀 더 범용적인 개념이기 때문에 실제 제품을 만들때는 라이브러리를 사용 하는 것이다. 아래와 같은 구조를 만든다면 디자인 시스템의 변경을 통해서 라이브러리를 변경하고 이것이 제품의 변경으로 이어지기 때문에 전체 시스템이 모두 동시에 업데이트가 된다. 그렇기 때문에 모든 구성품들이 쓸모 없어지는 것을 피할 수 있다.</p>
+
+
+
+<figure class="wp-block-image size-large"><a href="/assets/img/blog/understanding-atomic-design/image.png"><img src="/assets/img/blog/understanding-atomic-design/image.png" alt="" class="wp-image-211" /></a></figure>
+
+
+
+<p>저자는 유지 보수가 쉬운 디자인 시스템을 만들려면 아래의 것들을 만족 해야 한다고 한다. 각각에 대해서 모두 설명하지는 않겠지만 인상적인 부분들만 나의 생각을 덧붙이겠다.</p>
+
+
+
+<ul class="wp-block-list">
+<li>Make it official.</li>
+
+
+
+<li>Make it adaptable.</li>
+
+
+
+<li>Make it maintainable.</li>
+
+
+
+<li>Make it cross-disciplinary.</li>
+
+
+
+<li>Make it approachable.</li>
+
+
+
+<li>Make it visible.</li>
+
+
+
+<li>Make it bigger.</li>
+
+
+
+<li>Make it context-agnostic.</li>
+
+
+
+<li>Make it contextual.</li>
+
+
+
+<li>Make it last.</li>
+</ul>
+
+
+
+<h4 class="wp-block-heading">Make it adaptable</h4>
+
+
+
+<p>디자인 시스템은 계속 변화하는 것 이기 때문에 유연하게 만들어야 한다. 유연하다는 것은 디자인 시스템에 새로운 것을 추가하고 삭제 하는 것이 쉬워야 한다는 것이다. 이 챕터에서는 Ubuntu를 만드는 Canonical의 웹 팀에서 새로운 컴포넌트를 추가 할 때 참고하는 의사 결정 트리를 소개 한다.</p>
+
+
+
+<blockquote class="wp-block-quote">
+<p><em>We thought that it would be good to document the process that a pattern should follow in order to become a Vanilla pattern, so after a little bit of brainstorming, we created a diagram that shows the different steps that should be taken from before submitting a pattern proposal to its full acceptance as a Vanilla pattern. - </em><a href="http://design.canonical.com/2016/07/getting-vanilla-ready-for-v1-the-roadmap/">Inayaili de León Persson, Canonical</a></p>
+</blockquote>
+
+
+
+<figure class="wp-block-image size-large"><a href="https://atomicdesign.bradfrost.com/images/content/pattern-addition-flowchart.png"><img src="https://atomicdesign.bradfrost.com/images/content/pattern-addition-flowchart.png" alt="" class="wp-image-244" /></a><figcaption class="wp-element-caption"><a href="https://atomicdesign.bradfrost.com/images/content/pattern-addition-flowchart.png">https://atomicdesign.bradfrost.com/images/content/pattern-addition-flowchart.png</a></figcaption></figure>
+
+
+
+<p>이 트리가 인상적인 이유는 얼마나 체계적으로 디자인 시스템을 관리 해야 하는가 감이 왔기 때문이다. 현재 사내 디자인 시스템의 경우 무언가를 추가하고 삭제할 때 개별적으로 결정 했다. 모두 기준이 제각각이기 때문에 가끔은 타인의 결정에 대해서 납득하지 못하는 경우도 있었다. 하지만 이렇게 시스템적으로 컴포넌트를 추가 한다면 누가 언제 디자인 시스템을 수정 하던지 퀄리티가 보장 될 수 있을 것이다.</p>
+
+
+
+<h4 class="wp-block-heading">Clearing technical hurdles</h4>
+
+
+
+<p>개인적으로는 이 부분이 매우 어렵다고 생각 한다. 책에서 이야기 하는 내용과 내가 겪는 어려움은 좀 다르긴 한데, 책의 내용을 먼저 짧게 이야기 하겠다. 책에서는 라이브러리와 어플리케이션이 동일한 templating 언어를 사용 하므로서 이 둘의 간극을 좁힐 수 있다고 이야기 한다. templating 언어는 <em><a href="https://mustache.github.io/">Mustache</a>, <a href="https://handlebarsjs.com/">Handlebars</a>, <a href="https://underscorejs.org/#template">Underscore</a>, <a href="https://github.com/dscape/jade">Jade</a></em> 와 같이 내부 컨텐츠를 정의하지 않고 템플렛만 만들고 어떻게 컨텐츠를 채워 넣을지만 정의 하는 언어들을 말한다.</p>
+
+
+
+<p>하지만 라이브러리와 어플리케이션의 간극은 여러 툴들이 있어서 상대적으로 메우기 쉽다. 내가 요즘 느끼는 큰 문제는 디자인 툴과 라이브러리의 간극이다. 피그마와 같은 디자인 툴에서 바로 코드를 생성 해주면 해결이 될까 싶기도 하지만 사실 그렇게 간단한 문제가 아니다. 디자인 툴과 라이브러리가 진정으로 연결이 된다면 라이브러리의 코드를 수정 했을 때 디자인 툴에서도 반영이 되어야 한다. 당연히 그 반대도 되어야 하고. 하지만 내가 알기로 그런 툴은 없다. 디자인 툴과 코드에서 모두 동일한 디자인을 수정 할 수 없다면 이 둘이 표현하는 디자인은 결코 동일해 질 수 없다.</p>
+
+
+
+<h4 class="wp-block-heading">Make it cross-disciplinary</h4>
+
+
+
+<p>이 이야기는 회사 내의 다양한 사람들이 모두 이해하고 사용 할 수 있도록 만들라는 뜻이다. 이 책에서는 캐러셀의 예시를 들며 이야기 한다. 쇼핑몰의 메인 페이지에 올라가는 캐러셀을 바꾼다고 하자. 그러면 비즈니스와 관련된 팀이 상품을 정해야 하고, 카피라이터들이 UX writing을 수정해야 하며, 그래픽 디자이너들이 이미지를 만들어야 하고, FE 개발자들은 캐러샐이 제대로 사용성에 문제가 없이 동작하는지 확인 해야 하고 BE 개발자들은 리소스가 제대로 로드가 되는지 확인 해야 한다. 이렇게 하나의 컴포넌트에도 연관되어 있는 사람들이 엄청나게 많다. 이런 복잡한 업무를 최대한 단순하게 처리 할 수 있게 하는 디자인 시스템이 좋은 시스템이다.</p>
+
+
+
+<p>나 역시 이 부분에 대해서 많이 공감을 하고 있다. 정말 작은 부분을 고치려고 해도 관여가 되는 부분이 너무나도 많다. 특히나 UX writing의 경우 정말 관리가 어렵다. 모든 UX writing을 토큰화 하여 한 곳에서 수정하면 디자인 툴과 라이브러리에도 반영이 되게 하고 싶지만 기술적으로 어렵다. 이 뿐만이 아니라 경험상 UX writing을 토큰화 하여 한 곳에 모아도 문제인 것이 그런 경우에는 해당 텍스트가 어디에 어떤 식으로 위치 하는지 컨텍스트를 모르기 때문에 막상 UX writing을 고치려고 하면 실제 화면을 참고 하면서 작업 해야 한다. 작업시 참고해야 하는 소스가 늘어나게 되고 이는 업무가 복잡해 진다는 것을 의미한다.</p>
+
+
+
+<h4 class="wp-block-heading">Make it approachable</h4>
+
+
+
+<p>모두가 디자인 시스템에 쉽게 접근 해야 한다는 것이다. 너무나 당연한 말이다. 최근에 우리 팀도 <a href="https://storybook.js.org/">Storybook</a>으로 UI 라이브러리를 배포 했는데 쉽게 현재 UI 라이브러리의 상태를 확인 할 수 있게 되면서 커뮤니케이션이 큰 도움이 되었다.</p>
+
+
+
+<p>이 챕터에서 가장 마음에 들었던 인용으로 이 챕터의 정리를 마무리 한다.</p>
+
+
+
+<blockquote class="wp-block-quote">
+<p><em>The biggest existential threat to any system is neglect. - </em><a href="http://airbnb.design/the-way-we-build/">Alex Schleifer, Airbnb</a></p>
+</blockquote>
+
+
+
+<h2 class="wp-block-heading">Case Study: KRDS</h2>
+
+
+
+<p>이 글을 읽고 얼마 지나지 않아 <a href="https://www.krds.go.kr/">대한민국 정부 디자인 시스템 (KRDS)</a> 1.0 버전이 나왔다는 소식을 들었다. 들어가서 구경을 해보니 아토믹 디자인과 궤를 같이 하고 있다는 생각이 들었고, 보면서 새롭게 배우게 된 것들도 있어서 KRDS를 보고 배운 것들을 같이 정리 해 보고 싶었다. </p>
+
+
+
+<h3 class="wp-block-heading">구조</h3>
+
+
+
+<p>먼저 메뉴를 보면 다음과 같이 구성 되어 있다.</p>
+
+
+
+<figure class="wp-block-image size-large"><a href="/assets/img/blog/understanding-atomic-design/image-2.png"><img src="/assets/img/blog/understanding-atomic-design/image-2.png" alt="" class="wp-image-229" /></a></figure>
+
+
+
+<p>내용들을 보면 '컴포넌트' 아래에 atom들과 작은 molecule들이 있다. 여기 포함되어 있는 molecule의 경우 너무 작거나 일반적이어서 굳이 더 상위 레벨로 구분할 필요가 없는 것들이 포함 되어 있는것 같았다. 예를 들어서 <a href="https://www.krds.go.kr/html/site/component/component_04_05.html">모달</a>의 경우 <a href="https://www.krds.go.kr/html/site/component/component_05_02.html">버튼</a>과 다른 텍스트로 구성이 되는데 이것이 버튼과 같은 레벨에인 컴포넌트에 존재한다. '기본 패턴'의 경우 organism에 해당하는 것들이 있고 '서비스 패턴'에는 template에 해당하는 것들이 있다고 생각 한다.</p>
+
+
+
+<p>사실 아토믹 디자인과 같은 레벨로 구분이 되어 있다고 생각하지는 않고 또한 각 레벨에 있는 패턴과 컴포넌트들이 모두 동등한 레벨인지에 대해서도 논의의 여지가 있다고 생각 한다. 개인적으로 '컴포넌트'에 있는 atom에 해당하는 것들과 molecule에 해당하는 것들이 따로 빠지는 것이 좋지 않나 생각이 든다. 하지만 내가 새롭게 배운 것은 '서비스 패턴' 이다. 말 그대로 서비스 레벨에서 자주 사용되는 패턴을 모아둔 것인데 검색이나 로그인 같은 것들이 있다. 상당히 구체화 된 수준에서 반복되는 것을 패턴으로 잘 만든 것 같다. 이것이 아토믹 디자인에서 이야기 하는 template의 역할이 아닐까 싶다. 우리 디자인 시스템에서는 이정도로 레벨을 높여야 겠다는 생각을 하지는 못했는데 충분히 유용한 접근 방법인 것 같다.</p>
+
+
+
+<h3 class="wp-block-heading">디자인 토큰</h3>
+
+
+
+<p>KRDS에서 배운 또 다른 것은 디자인 토큰에 대한 것이다. 디자인 토큰의 구조와 이름 짓는 방법에 대해 감을 좀 잡게 되었다. 아토믹 디자인에서 이야기 하지 않는 것이 바로 디자인 토큰이다. 아마 저 책이 쓰여질 당시에는 널리 퍼진 개념이 아니라 그런 것 같다. 하지만 요즘 디자인 시스템에는 빠지지 않는 개념이라고 알고 있다. 디자인 토큰에 대해 궁금하다면 <a href="https://www.krds.go.kr/html/site/style/style_07.html">KRDS의 디자인 토큰 문서</a>를 읽는 것 만으로도 큰 도움이 될 것 같다. 잘 쓰여졌다고 생각 한다.</p>
+
+
+
+<p>디자인 토큰은 총 세 개의 레벨로 나누어 진다. primitive, semantic, component이다. 그리고 각각은 하위 토큰을 레퍼런스 한다. </p>
+
+
+
+<figure class="wp-block-image alignleft size-large is-resized"><a href="https://www.krds.go.kr/resources/img/guide/contents/style/token_level_01.png"><img src="https://www.krds.go.kr/resources/img/guide/contents/style/token_level_01.png" alt="" class="wp-image-235" style="width:1019px;height:auto" /></a><figcaption class="wp-element-caption"><a href="https://www.krds.go.kr/resources/img/guide/contents/style/token_level_01.png">https://www.krds.go.kr/resources/img/guide/contents/style/token_level_01.png</a></figcaption></figure>
+
+
+
+<p>primitive token은 기본적인 속성을 정의하는 토큰 레벨로서 직접 사용하지는 않는다. 색, 타이포그래피, 수치 등을 정의 한다. 우리 디자인 시스템은 수치를 좀 더 세분화 하여 spacing, width-and-height 등의 카테고리를 만들었다.</p>
+
+
+
+<figure class="wp-block-image size-large"><a href="https://www.krds.go.kr/resources/img/guide/contents/style/token_level_02.png"><img src="https://www.krds.go.kr/resources/img/guide/contents/style/token_level_02.png" alt="" class="wp-image-246" /></a><figcaption class="wp-element-caption"><a href="https://www.krds.go.kr/resources/img/guide/contents/style/token_level_02.png">https://www.krds.go.kr/resources/img/guide/contents/style/token_level_02.png</a></figcaption></figure>
+
+
+
+<p>KRDS에서 새롭게 배운 것은 시멘틱 토큰과 컴포넌트 토큰이다. 시멘틱 토큰은 맥락을 가지고 있는 토큰이다. 컴포넌트 토큰은 컴포넌트에 사용 되는 토큰을 의미 한다. </p>
+
+
+
+<figure class="wp-block-image size-large"><a href="https://www.krds.go.kr/resources/img/guide/contents/style/token_level_03.png"><img src="https://www.krds.go.kr/resources/img/guide/contents/style/token_level_03.png" alt="" class="wp-image-248" /></a><figcaption class="wp-element-caption"><a href="https://www.krds.go.kr/resources/img/guide/contents/style/token_level_03.png">https://www.krds.go.kr/resources/img/guide/contents/style/token_level_03.png</a></figcaption></figure>
+
+
+
+<figure class="wp-block-image size-large"><a href="https://www.krds.go.kr/resources/img/guide/contents/style/token_level_04.png"><img src="https://www.krds.go.kr/resources/img/guide/contents/style/token_level_04.png" alt="" class="wp-image-249" /></a><figcaption class="wp-element-caption"><a href="https://www.krds.go.kr/resources/img/guide/contents/style/token_level_04.png">https://www.krds.go.kr/resources/img/guide/contents/style/token_level_04.png</a></figcaption></figure>
+
+
+
+<p>재밌는 것은 시멘틱 토큰은 디자인 툴에서만 사용하고 컴포넌트 토큰은 코드에서만 사용한다. KRDS는 "디자인 툴과 코드 간의 역할 분리를 통해 효율성을 극대화하고 일관된 관리가 가능하도록 하기 위함이다."라고 설명 하는데 나의 해석은 다음과 같다. 이렇게 분리가 되면 디자인 토큰을 만드는 태스크와 구현 태스크를 더 깔끔하게 분리 할 수 있어서 좋은 것 같다. 디자인 토큰을 만드는 단계에서 컴포넌트에 필요한 토큰들을 한번에 정의하고 구현 단계에서는 해당 컴포넌트로 시작하는 토큰들을 그대로 가져와서 사용하면 된다. 구현 하면서 스타일에 대한 세부 정의를 확인하는 과정이 간소화 될 것 같다. 예를 들어서 button은 컴포넌트는 button으로 시작하는 토큰만 사용하면 되고 토큰 이름들을 보면 어느 부분을 어떻게 정의하면 되는지 명확하니 디자인 툴을 다시 확인 할 필요가 없을 것 같다.</p>
+
+
+
+<p>내가 정말 중요하다고 생각 하는 것은 토큰 네이밍이다. 개인적으로 토큰 이름 짓는게 매우 어렵다고 생각한다. KRDS의 토큰의 네이밍 규칙은 아래와 같다.</p>
+
+
+
+<ul class="wp-block-list">
+<li>시멘틱 토큰: {namespace}-{theme}-{category}-{component}-{type}-{modifier}</li>
+
+
+
+<li>컴포넌트 토큰: --{namespace}-{component}-{theme}-{type}-{modifier}</li>
+</ul>
+
+
+
+<p>각 요소들에 대한 설명은 <a href="https://www.krds.go.kr/html/site/utility/utility_03.html">KRDS의 네이밍 원칙</a>에 자세히 설명 되어 있다. 좋은 레퍼런스라고 생각 한다.</p>
+
+
+
+<figure class="wp-block-image size-large"><a href="https://www.krds.go.kr/resources/img/guide/contents/utility/naming_token_05.png"><img src="https://www.krds.go.kr/resources/img/guide/contents/utility/naming_token_05.png" alt="" class="wp-image-256" /></a><figcaption class="wp-element-caption"><a href="https://www.krds.go.kr/resources/img/guide/contents/utility/naming_token_05.png">https://www.krds.go.kr/resources/img/guide/contents/utility/naming_token_05.png</a></figcaption></figure>
+
+
+
+<h2 class="wp-block-heading">디자인 시스템은 어렵다</h2>
+
+
+
+<p>처음에 회사에 입사 했을 때 유일한 소프트웨어 팀 멤버였고, 그 때 부터 디자인 시스템을 만들고 싶었다. 어떻게 보면 조금씩 만들고 있기도 했다. 지금은 부족한 부분이 많긴 하지만 그래도 디자인 시스템이 존재하긴 한다. 디자인 시스템을 안만들어도 되는데 만들고 싶어서 만들고 있는 것이 아니라 꼭 필요해서 해서 만들고 있다. </p>
+
+
+
+<p>디자인 시스템을 만들면서 어렵다는 생각을 많이 하고 있다. 현재 우리가 겪고 있는 가장 큰 어려운 점은 디자인 툴(피그마)과 코드의 간극이다. 이 둘이 동일한 개념(컴포넌트)를 동일한 방식으로 표현하지 못하고 하나의 방법으로 이 둘을 수정하지 못한다는 점이 문제의 핵심이다. 이에 대한 내용도 자세히 설명하면 글 하나 분량이 나올텐데 이에 대해서는 기회가 되면 정리 해 보겠다. 이 뿐만이 아니라 디자인 시스템의 구조를 짜는것 부터 시작해서 어떻게 atom, molecule, organism을 구성해야 하는지도 복잡하다. 처음에 구조를 만들어 두어도 시간이 갈 수록 이 구조가 유효하지 않게 되는 시점이 온다. 그리고 그 시점이 올 때마다 적절하게 구조를 변경해야 하는데 제한된 리소스에서 쉽지 않은 일이다. </p>
+
+
+
+<p>atomic design 책을 읽고 KRDS에 대해서 살펴 보면서 우리 디자인 시스템을 어떻게 수정해야 할지 감이 조금 생겼다. 이를 기반으로 다시 시스템을 설계 해 보아야 겠다.</p>
