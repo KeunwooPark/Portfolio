@@ -3,6 +3,7 @@ layout: default
 last_updated: "2025-03-29"
 ---
 <link rel="stylesheet" href={{"/assets/css/index.css" | relative_url}}>
+<link rel="stylesheet" href={{"/assets/css/blog.css" | relative_url}}>
 <header>
   <title>Keunwoo Park</title>
 </header>
@@ -70,7 +71,14 @@ last_updated: "2025-03-29"
     {% include post_card.html post=post%}
   {% endfor %}
 
-  <h2 class="mb-3"> Talks </h2>
+  <h2 class="mb-3"> Blog </h2>
+  <hr>
+  {% for post in site.categories.blog limit:3 %}
+    {% include blog_card.html post=post %}
+  {% endfor %}
+  <a href="{{ "/blog/" | relative_url }}">See all posts →</a>
+
+  <h2 class="mb-3 mt-5"> Talks </h2>
   <hr>
   <ul>
     <li>
@@ -82,7 +90,7 @@ last_updated: "2025-03-29"
   <hr>
   <ul>
     <li>
-      <a href="https://keunwoo.wordpress.com" target="_blank" rel="noopener noreferrer">Blog (in Korean)</a>
+      <a href="{{ "/blog/" | relative_url }}">Blog</a>
     </li>
     <li>
       <a href="https://github.com/KeunwooPark" target="_blank" rel="noopener noreferrer">GitHub</a>

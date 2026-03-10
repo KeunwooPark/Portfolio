@@ -1,0 +1,13 @@
+---
+layout: default
+---
+<link rel="stylesheet" type="text/css" href="{{ "/assets/css/blog.css" | relative_url }}">
+<div class="container main pt-5 pb-5">
+  <h2>Blog</h2>
+  <hr>
+  {% for post in site.categories.blog %}
+    {% include blog_card.html post=post %}
+  {% else %}
+    <p class="text-muted">No posts yet.</p>
+  {% endfor %}
+</div>

@@ -1,0 +1,7 @@
+<div class="blog-card">
+  <h5><a href="{{ post.url | relative_url }}">{{ post.title | safe }}</a></h5>
+  <div class="date">{{ post.publish_date | date: "%B %-d, %Y" }}</div>
+  {% if post.excerpt %}
+  <p class="excerpt">{{ post.excerpt }}</p>
+  {% endif %}
+</div>

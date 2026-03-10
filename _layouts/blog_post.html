@@ -1,0 +1,16 @@
+---
+layout: default
+---
+<title>{{ page.title }}</title>
+<link rel="stylesheet" type="text/css" href="{{ "/assets/css/blog.css" | relative_url }}">
+<div class="container">
+  <div class="main">
+    <div class="blog-post-header text-center">
+      <h1>{{ page.title | safe }}</h1>
+      <div class="date">{{ page.publish_date | date: "%B %-d, %Y" }}</div>
+    </div>
+    <div class="blog-content">
+      {{ content }}
+    </div>
+  </div>
+</div>
