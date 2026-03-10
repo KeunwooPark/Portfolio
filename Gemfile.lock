@@ -47,6 +47,7 @@ GEM
     listen (3.9.0)
       rb-fsevent (~> 0.10, >= 0.10.3)
       rb-inotify (~> 0.9, >= 0.9.10)
+    logger (1.7.0)
     mercenary (0.4.0)
     pathutil (0.16.2)
       forwardable-extended (~> 2.6)
@@ -71,11 +72,13 @@ PLATFORMS
   arm64-darwin-21
   arm64-darwin-22
   arm64-darwin-23
+  arm64-darwin-25
   x64-mingw32
 
 DEPENDENCIES
   jekyll
+  logger
   webrick (~> 1.7)
 
 BUNDLED WITH
-   2.2.17
+  4.0.3
