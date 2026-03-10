@@ -37,6 +37,14 @@
   line-height: 1.8;
 }
 
+.blog-content blockquote {
+  border-left: 4px solid #dee2e6;
+  padding: 0.5rem 1rem;
+  margin: 1.5rem 0;
+  color: #6c757d;
+  font-style: italic;
+}
+
 .blog-content img,
 .blog-content figure {
   max-width: 100% !important;

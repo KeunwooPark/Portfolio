@@ -6,180 +6,75 @@ publish_date: 2025-03-09
 excerpt: "대학원 졸업 후에 부쩍 정성 연구 방법론들에 대한 관심이 높아졌다. 박사 과정에서 주로 정량 연구를 해서 그렇기도 한데 제품 초기 단계에서 필요한 연구 방법론이기 때문이기도 하다. 그러던 중 이번주에 UX 리서치에 관심 있는 사람들 이라는 단체에서 여는 컨퍼런스에 다녀왔다. 거기에서 박소윤 연사님께서 open coding, axial coding,..."
 categories: [blog]
 ---
-<p>대학원 졸업 후에 부쩍 정성 연구 방법론들에 대한 관심이 높아졌다. 박사 과정에서 주로 정량 연구를 해서 그렇기도 한데 제품 초기 단계에서 필요한 연구 방법론이기 때문이기도 하다. 그러던 중 이번주에 <a href="https://pyoux.notion.site/UX-19648c34ac0d80b8a8c9f32045465dd5">UX 리서치에 관심 있는 사람들</a> 이라는 단체에서 여는 컨퍼런스에 다녀왔다. 거기에서 박소윤 연사님께서 open coding, axial coding, selective coding들에 대해서 이야기를 하셨었는데 일부는 들어본 내용이었지만 일부는 들어보지 못한 내용들 이었다. 그래서 이번 기회에 이 방법론들에 대해서 정리를 좀 해봐야 겠다고 생각 해서 공부를 해보았다. 찾아보니 Grounded Theory에 기반을 두고 있는 코딩 방법론들이었고 다행히도 ATLAS.ti에서 Grouded Theory에 대해서 잘 정리해 두었다. 이 글을 읽고 내 나름대로 이 블로그에 정리를 해본다. 참고로 ATLAS.ti는 유명한 정량 연구 툴을 만드는 회사이다. Grounded Theory에 대해서는 예전에 학교에서 세미나로 배운 적은 있는데 당시에는 나의 연구와 관련이 없기도 했고 꽤나 어렵게 느껴져서 이 글을 읽기 전까지는 전혀 기억이 나지 않는 상태였다.</p>
+대학원 졸업 후에 부쩍 정성 연구 방법론들에 대한 관심이 높아졌다. 박사 과정에서 주로 정량 연구를 해서 그렇기도 한데 제품 초기 단계에서 필요한 연구 방법론이기 때문이기도 하다. 그러던 중 이번주에 [UX 리서치에 관심 있는 사람들](https://pyoux.notion.site/UX-19648c34ac0d80b8a8c9f32045465dd5) 이라는 단체에서 여는 컨퍼런스에 다녀왔다. 거기에서 박소윤 연사님께서 open coding, axial coding, selective coding들에 대해서 이야기를 하셨었는데 일부는 들어본 내용이었지만 일부는 들어보지 못한 내용들 이었다. 그래서 이번 기회에 이 방법론들에 대해서 정리를 좀 해봐야 겠다고 생각 해서 공부를 해보았다. 찾아보니 Grounded Theory에 기반을 두고 있는 코딩 방법론들이었고 다행히도 ATLAS.ti에서 Grouded Theory에 대해서 잘 정리해 두었다. 이 글을 읽고 내 나름대로 이 블로그에 정리를 해본다. 참고로 ATLAS.ti는 유명한 정량 연구 툴을 만드는 회사이다. Grounded Theory에 대해서는 예전에 학교에서 세미나로 배운 적은 있는데 당시에는 나의 연구와 관련이 없기도 했고 꽤나 어렵게 느껴져서 이 글을 읽기 전까지는 전혀 기억이 나지 않는 상태였다.
 
+아래 내용은 [What is Grounded Theory?](https://atlasti.com/guides/qualitative-research-guide-part-2/grounded-theory) 글을 정리 한 것이다.
 
+## Grounded Theory란?
 
-<p>아래 내용은 <a href="https://atlasti.com/guides/qualitative-research-guide-part-2/grounded-theory">What is Grounded Theory?</a> 글을 정리 한 것이다.</p>
+Grounded Theory는 쉽게 이야기 해서 데이터를 기반으로 이론을 만들어 내는 과정을 이야기 한다. 어떤 이론을 기반으로 이 이론이 맞는지 아닌지 검증하는 것이 아니다. 주로 어떤 현상을 설명하는 이론이 적거나 부재할 때 사용하는 방법론이다. Grounded Theory의 특징이라고 한다면 데이터로 부터 출발 한다는 것이다. 주로 사람들을 이해하거나 사람들이 그들의 경험을 어떻게 인식하는지 알아보기 위해서 사용한다.
 
+Grounded Theory는 다음과 같은 장점들을 가지고 있다고 한다.
 
+  * 유연하다. Grounded Theory는 연구 과정에서 상황에 따라서 다양하게 대처 할 수 있다.
+  * 귀납적이다. 데이터를 기반으로 이론을 만드는 것이기 때문에 개인의 경험을 해석하는데 유용하다.
+  * 풍부하고 자세한 인사이트를 제공한다.
+  * 실용적인 결과물을 얻을 수 있다.
 
-<h2 class="wp-block-heading">Grounded Theory란?</h2>
+단점들은 다음과 같다.
 
+  * 시간이 많이 든다. 데이터를 수집하고 분석 하는 과정이 반복적으로 이루어지기 때문이다.
+  * 복잡하다. 코딩과 분석 단계에 따라서 추상적은 개념을 다뤄야 할 일이 생기기 때문이다.
+  * 스킬과 경험이 필요하다.
+  * 결과가 주관적이다. 이는 장점이 될 수도 있는데 뒤에서 좀 더 설명 한다.
 
+나의 생각을 좀 덧붙이자면 대체로 맞는 말이긴 하지만 Grounded Theory에 국한 된 이야기는 아니라고 생각한다. Grounded Theory의 특징은 코딩 방식에 있다고 생각 한다.
 
-<p>Grounded Theory는 쉽게 이야기 해서 데이터를 기반으로 이론을 만들어 내는 과정을 이야기 한다. 어떤 이론을 기반으로 이 이론이 맞는지 아닌지 검증하는 것이 아니다. 주로 어떤 현상을 설명하는 이론이 적거나 부재할 때 사용하는 방법론이다. Grounded Theory의 특징이라고 한다면 데이터로 부터 출발 한다는 것이다. 주로 사람들을 이해하거나 사람들이 그들의 경험을 어떻게 인식하는지 알아보기 위해서 사용한다.</p>
+## Grounded Theory의 핵심 구성 요소들
 
+Grounded Theory의 핵심 구성 요소들은 theoretical sensitivity, theoretical sampling, coding and analysis, theoretical saturation, 그리고 theoretical integration가 있다고 한다.
 
+Theoretical Sensitivity는 연구자가 현상을 이해하고 그 현상의 패턴 및 구조를 파악할 수 있는 능력을 의미한다. 이 능력을 기르기 위해서는 많이 읽고, 세미나나 워크샵도 많이 참석 해보고 실제 인터뷰나 관찰을 많이 해봐야 한다고 한다.
 
-<p>Grounded Theory는 다음과 같은 장점들을 가지고 있다고 한다.</p>
+Theoretical Sampling는 정해진 샘플을 기반으로 연구를 하는 것이 아니라 자신이 가지고 있는 이론적 아이디어에 기반하여 새로운 데이터 소스를 찾는 방법을 의미한다. 이는 굉장히 열린 연구 방법이기 때문에 쉽지 않을 수 있다고 원문은 이야기 한다.
 
+Coding and Analisys는 데이터를 분석하는 과정을 의미 한다. 코딩은 세 단계로 이루어진다. 먼저 open coding이다. 이 단계에서는 수집한 데이터들을 카테고리로 그룹핑 한다. Axial coding은 open coding의 결과를 재조합하면서 open coding에서 나온 카테고리들을 좀 더 추상적인 카테고리로 그룹핑 하는 과정이다. 본문에 나오지는 않지만 좀 더 찾아보면 open coding과 axial coding은 서로 왔다 갔다 하며 이루어진다. 마지막으로 selective coding이다. 이 단계에서는 연구자는 앞의 코드들을 기반으로 이론적 프레임워크를 세우는 과정이라고 한다. 컨퍼런스에서 연사님께서 하신 말로는 이 단계에서는 하나의 이론이 나오는 과정이라고 한다. 원문에서는 [Thematic Analysis](https://atlasti.com/guides/thematic-analysis)와의 차이점을 이야기 하는데, Thematic Analysis는 현상에 대한 다면적인 분석 정도로 끝이 난다면 Grounded Theory는 현상을 설명하는 이론을 만드는데 까지 가는데 차이가 있다고 한다.
 
+Theoretical Saturation은 데이터에서 더 이상 새로운 컨셉을 도출하지 못하는 상태를 이야기 한다. 이 상태가 된다면 카테고리들이 잘 정립이 되었고 더 이상 데이터 수집이 이루어 질 필요가 없다는 것을 의미한다. 주의 할 것은 이 상태가 데이터의 모든 면을 탐색 했다는 것이 아니라 현재 가지고 있는 카테고리가 잘 정립 되었다는 것을 의미 한다는 것이다. 이 단계가 되면 연구자는 데이터를 추가로 수집 하되 새로운 카테고리를 개발 하는 것에 집중 해야 한다고 한다. 이는 앞에서 이야기 한 Theoretical Sampling과 연관이 된다.
 
-<ul class="wp-block-list">
-<li>유연하다. Grounded Theory는 연구 과정에서 상황에 따라서 다양하게 대처 할 수 있다.</li>
+Theoretical Integration은 Grounded Theory의 가장 마지막 단계로서 지금까지 도출 한 카테고리 들을 기반으로 통합된 이론으로 만드는 것을 의미 한다. 연구자는 이 과정에서 이론을 명확하고 설득력 있게 설명 해야 하며 관찰한 현상에 대해서 새롭고 인사이트 있는 이해를 제공 해야 한다.
 
+Grounded Theory 연구는 다음과 같은 순서로 진행이 되어야 한다고 한다.
 
+  1. 데이터 수집
+  2. open coding
+  3. axial coding
+  4. selective coding
+  5. 이론 수립
 
-<li>귀납적이다. 데이터를 기반으로 이론을 만드는 것이기 때문에 개인의 경험을 해석하는데 유용하다.</li>
+## Grounded Theory에서 연구자의 역할
 
+연구자는 수동적으로 데이터를 수집하는 사람이 아니라 능동적인 참여자의 역할을 해야 한다. 본문에서는 다양한 관점에서 연구자의 역할을 설명 한다.
 
+먼저 주관성과 객관성에 대해서 이야기 한다. 본문에서는 이 둘 사이의 균형을 맞추는 것이 중요하다고 한다. 연구자는 연구 과정에서 객관성을 유지하여 편향되지 않은 연구를 해야 하며 동시에 본인의 경험, 배경, 관점들을 적극적으로 활용하여 연구를 주관적인 방향으로 끌고 가야 한다고 한다. 이 과정에서 연구자는 본인의 가지고 있는 가정이나 편견들을 투명하게 공개 해야 한다. 이를 통해서 연구의 신뢰성을 높일 수 있다. 이것은 [reflexivity](https://atlasti.com/guides/qualitative-research-guide-part-1/reflexivity) 라는 개념과 연결이 되는데 정량연구 방법론에서 주요하게 다루는 개념인 것 같다. Reflexivity에 대해서는 기회가 된다면 다른 글에서 더 다뤄 보도록 하겠다.
 
-<li>풍부하고 자세한 인사이트를 제공한다.</li>
+위와 연관되어서 연구자는 스스로를 돌아보는 습관을 가지는 것이 중요하다고 한다. 주관성이 들어갈 수 밖에 없고 동시에 객관성을 유지해야 하기에 본인이 가지고 있는 가정과 편견에 대해서 항상 돌아봐야 한다. 이 과정은 데이터 수집부터 분석 및 이론 수립 과정까지 모두 이루어 져야 한다.
 
+## Constructive Grounded Theory
 
+Grounded Theory가 1960년대에 처음 등장한 뒤로 부터 계속 발전 해 왔는데 Kathy Charmaz로 대두되는 constructive grounded theory의 발전이 주요한 사건이라고 한다. 이는 연구자만이 지식을 생성하는 주체가 아니라 연구 대상자들도 같이 지식 생성에 참여한다는 개념이다. 이는 [participatory research](https://en.wikipedia.org/wiki/Participatory_action_research) 와도 연결이 되는 부분이 있어 보인다.
 
-<li>실용적인 결과물을 얻을 수 있다.</li>
-</ul>
+Constructive Grounded Theory는 constructivism이라는 철학적인 관점에 시작 하는데 사람들은 경험과 인터랙션을 통해서 세상을 이해 한다는 것이다. 연구가 세상을 이해 하는 것이라고 생각 하면 연구자들의 연구 행위 자체가 수동적이 관찰자가 아니라 결과에 영향을 미치는 적극적인 참가자, 일종의 스스로가 연구 대상이 되는 것이라고 볼 수 있다.
 
+Constructive Grounded Theory의 특징으로는 다음과 같은 것 들이 있다.
 
+  * 연구자-참가자의 인터랙션 강조. Constructive Grounded Theory는 데이터가 '존재'하는 것이 아니라 연구자와 참가자의 인터랙션을 통해서 생성된다고 믿는다.
+  * 여러 사실의 존재 인식. 위에서 이야기 한 것 처럼 연구자와 참가자의 인터랙션으로 데이터가 생성 되기 때문에 어떤 참가자와 어떤 연구자가 인터랙션 하느냐에 따라서 다른 데이터가 생성 될 수 있다. 연구자는 이를 인식하고 있어야 한다. 위에서 이야기한 연구자의 주관성 관도 연관 된다.
+  * 해석적 이해(interpretive understanding)의 집중. 데이터가 생성되기 때문에 객관적인 사실이라는 것은 존재 하지 않는다. 때문에 객관적인 사실을 찾으려고 하지 말고 개인들을 이해하는데 집중 해야 한다.
+  * Grounded Theory 방법론의 유연한 사용. 앞서 이야기한 grounded theory의 방법론들을 보다 더 유연하게 사용한다.
 
-<p>단점들은 다음과 같다.</p>
+이와 관련해서 내가 연상이 되는 것은 정량 연구에서 존재론 (ontology)와 인식론 (epistemology)적 관점이다. 최근에 이 두 철학적 개념이 정량연구에서 주요한 이론적 틀이 된다는 것을 알았다. 정량 연구 방법론의 이론적 배경에 대해서 더 궁금하다면 이 두 관점에 대해서 찾아 보면 흥미로울 것이다.
 
+## 결론
 
-
-<ul class="wp-block-list">
-<li>시간이 많이 든다. 데이터를 수집하고 분석 하는 과정이 반복적으로 이루어지기 때문이다.</li>
-
-
-
-<li>복잡하다. 코딩과 분석 단계에 따라서 추상적은 개념을 다뤄야 할 일이 생기기 때문이다.</li>
-
-
-
-<li>스킬과 경험이 필요하다.</li>
-
-
-
-<li>결과가 주관적이다. 이는 장점이 될 수도 있는데 뒤에서 좀 더 설명 한다.</li>
-</ul>
-
-
-
-<p>나의 생각을 좀 덧붙이자면 대체로 맞는 말이긴 하지만 Grounded Theory에 국한 된 이야기는 아니라고 생각한다. Grounded Theory의 특징은 코딩 방식에 있다고 생각 한다.</p>
-
-
-
-<h2 class="wp-block-heading">Grounded Theory의 핵심 구성 요소들</h2>
-
-
-
-<p>Grounded Theory의 핵심 구성 요소들은 theoretical sensitivity,&nbsp;theoretical sampling,&nbsp;coding&nbsp;and&nbsp;analysis, theoretical saturation, 그리고 theoretical integration가 있다고 한다.</p>
-
-
-
-<p>Theoretical Sensitivity는 연구자가 현상을 이해하고 그 현상의 패턴 및 구조를 파악할 수 있는 능력을 의미한다. 이 능력을 기르기 위해서는 많이 읽고, 세미나나 워크샵도 많이 참석 해보고 실제 인터뷰나 관찰을 많이 해봐야 한다고 한다.</p>
-
-
-
-<p>Theoretical Sampling는 정해진 샘플을 기반으로 연구를 하는 것이 아니라 자신이 가지고 있는 이론적 아이디어에 기반하여 새로운 데이터 소스를 찾는 방법을 의미한다. 이는 굉장히 열린 연구 방법이기 때문에 쉽지 않을 수 있다고 원문은 이야기 한다.</p>
-
-
-
-<p>Coding and Analisys는 데이터를 분석하는 과정을 의미 한다. 코딩은 세 단계로 이루어진다. 먼저 open coding이다. 이 단계에서는 수집한 데이터들을 카테고리로 그룹핑 한다. Axial coding은 open coding의 결과를 재조합하면서 open coding에서 나온 카테고리들을 좀 더 추상적인 카테고리로 그룹핑 하는 과정이다. 본문에 나오지는 않지만 좀 더 찾아보면 open coding과 axial coding은 서로 왔다 갔다 하며 이루어진다. 마지막으로 selective coding이다. 이 단계에서는 연구자는 앞의 코드들을 기반으로 이론적 프레임워크를 세우는 과정이라고 한다. 컨퍼런스에서 연사님께서 하신 말로는 이 단계에서는 하나의 이론이 나오는 과정이라고 한다. 원문에서는 <a href="https://atlasti.com/guides/thematic-analysis">Thematic Analysis</a>와의 차이점을 이야기 하는데, Thematic Analysis는 현상에 대한 다면적인 분석 정도로 끝이 난다면 Grounded Theory는 현상을 설명하는 이론을 만드는데 까지 가는데 차이가 있다고 한다.</p>
-
-
-
-<p>Theoretical Saturation은 데이터에서 더 이상 새로운 컨셉을 도출하지 못하는 상태를 이야기 한다. 이 상태가 된다면 카테고리들이 잘 정립이 되었고 더 이상 데이터 수집이 이루어 질 필요가 없다는 것을 의미한다. 주의 할 것은 이 상태가 데이터의 모든 면을 탐색 했다는 것이 아니라 현재 가지고 있는 카테고리가 잘 정립 되었다는 것을 의미 한다는 것이다. 이 단계가 되면 연구자는 데이터를 추가로 수집 하되 새로운 카테고리를 개발 하는 것에 집중 해야 한다고 한다. 이는 앞에서 이야기 한 Theoretical Sampling과 연관이 된다.</p>
-
-
-
-<p>Theoretical Integration은 Grounded Theory의 가장 마지막 단계로서 지금까지 도출 한 카테고리 들을 기반으로 통합된 이론으로 만드는 것을 의미 한다. 연구자는 이 과정에서 이론을 명확하고 설득력 있게 설명 해야 하며 관찰한 현상에 대해서 새롭고 인사이트 있는 이해를 제공 해야 한다.</p>
-
-
-
-<p>Grounded Theory 연구는 다음과 같은 순서로 진행이 되어야 한다고 한다.</p>
-
-
-
-<ol class="wp-block-list">
-<li>데이터 수집</li>
-
-
-
-<li>open coding</li>
-
-
-
-<li>axial coding</li>
-
-
-
-<li>selective coding</li>
-
-
-
-<li>이론 수립</li>
-</ol>
-
-
-
-<h2 class="wp-block-heading">Grounded Theory에서 연구자의 역할</h2>
-
-
-
-<p>연구자는 수동적으로 데이터를 수집하는 사람이 아니라 능동적인 참여자의 역할을 해야 한다. 본문에서는 다양한 관점에서 연구자의 역할을 설명 한다.</p>
-
-
-
-<p>먼저 주관성과 객관성에 대해서 이야기 한다. 본문에서는 이 둘 사이의 균형을 맞추는 것이 중요하다고 한다. 연구자는 연구 과정에서 객관성을 유지하여 편향되지 않은 연구를 해야 하며 동시에 본인의 경험, 배경, 관점들을 적극적으로 활용하여 연구를 주관적인 방향으로 끌고 가야 한다고 한다. 이 과정에서 연구자는 본인의 가지고 있는 가정이나 편견들을 투명하게 공개 해야 한다. 이를 통해서 연구의 신뢰성을 높일 수 있다. 이것은 <a href="https://atlasti.com/guides/qualitative-research-guide-part-1/reflexivity">reflexivity</a> 라는 개념과 연결이 되는데 정량연구 방법론에서 주요하게 다루는 개념인 것 같다. Reflexivity에 대해서는 기회가 된다면 다른 글에서 더 다뤄 보도록 하겠다.</p>
-
-
-
-<p>위와 연관되어서 연구자는 스스로를 돌아보는 습관을 가지는 것이 중요하다고 한다. 주관성이 들어갈 수 밖에 없고 동시에 객관성을 유지해야 하기에 본인이 가지고 있는 가정과 편견에 대해서 항상 돌아봐야 한다. 이 과정은 데이터 수집부터 분석 및 이론 수립 과정까지 모두 이루어 져야 한다.</p>
-
-
-
-<h2 class="wp-block-heading">Constructive Grounded Theory</h2>
-
-
-
-<p>Grounded Theory가 1960년대에 처음 등장한 뒤로 부터 계속 발전 해 왔는데 Kathy Charmaz로 대두되는 constructive grounded theory의 발전이 주요한 사건이라고 한다. 이는 연구자만이 지식을 생성하는 주체가 아니라 연구 대상자들도 같이 지식 생성에 참여한다는 개념이다. 이는 <a href="https://en.wikipedia.org/wiki/Participatory_action_research">participatory research</a> 와도 연결이 되는 부분이 있어 보인다.</p>
-
-
-
-<p>Constructive Grounded Theory는 constructivism이라는 철학적인 관점에 시작 하는데 사람들은 경험과 인터랙션을 통해서 세상을 이해 한다는 것이다. 연구가 세상을 이해 하는 것이라고 생각 하면 연구자들의 연구 행위 자체가 수동적이 관찰자가 아니라 결과에 영향을 미치는 적극적인 참가자, 일종의 스스로가 연구 대상이 되는 것이라고 볼 수 있다.</p>
-
-
-
-<p>Constructive Grounded Theory의 특징으로는 다음과 같은 것 들이 있다.</p>
-
-
-
-<ul class="wp-block-list">
-<li>연구자-참가자의 인터랙션 강조. Constructive Grounded Theory는 데이터가 '존재'하는 것이 아니라 연구자와 참가자의 인터랙션을 통해서 생성된다고 믿는다.</li>
-
-
-
-<li>여러 사실의 존재 인식. 위에서 이야기 한 것 처럼 연구자와 참가자의 인터랙션으로 데이터가 생성 되기 때문에 어떤 참가자와 어떤 연구자가 인터랙션 하느냐에 따라서 다른 데이터가 생성 될 수 있다. 연구자는 이를 인식하고 있어야 한다. 위에서 이야기한 연구자의 주관성 관도 연관 된다.</li>
-
-
-
-<li>해석적 이해(interpretive understanding)의 집중. 데이터가 생성되기 때문에 객관적인 사실이라는 것은 존재 하지 않는다. 때문에 객관적인 사실을 찾으려고 하지 말고 개인들을 이해하는데 집중 해야 한다.</li>
-
-
-
-<li>Grounded Theory 방법론의 유연한 사용. 앞서 이야기한 grounded theory의 방법론들을 보다 더 유연하게 사용한다.</li>
-</ul>
-
-
-
-<p>이와 관련해서 내가 연상이 되는 것은 정량 연구에서 존재론 (ontology)와 인식론 (epistemology)적 관점이다. 최근에 이 두 철학적 개념이 정량연구에서 주요한 이론적 틀이 된다는 것을 알았다. 정량 연구 방법론의 이론적 배경에 대해서 더 궁금하다면 이 두 관점에 대해서 찾아 보면 흥미로울 것이다.</p>
-
-
-
-<h2 class="wp-block-heading">결론</h2>
-
-
-
-<p>어렴풋이 기억 하기로는 요즘에는 논문에 Grounded Theory를 사용한다고 이야기를 잘 안한다고 들었었다. 리뷰어들이 Grounded Theory의 방법론을 굉장히 엄밀하게 따르지 않으면 문제를 제기한다는 것이 이유였다. 그런데 이런 이야기를 떠나서 사실 product를 만듦에 있어서 이론을 만들 일은 없기 때문에 Grounded Theory를 실무에서 사용 할 일이 있을지는 모르겠다. 내가 관심을 가지는 연구 분야도 아니기도 하다. 나는 이론을 만드는 것 보다는 유용한 결과물을 만들어 내는 것에 관심이 있기 때문이다. 이 관점에서 본다면 제품을 만드는 입장에서 나는 <a href="https://atlasti.com/guides/thematic-analysis">Thematic Analysis</a>를 더 공부 하는 것이 맞는 것 같다. 공교롭게도 요즘 <a href="https://books.google.co.kr/books/about/Thematic_Analysis.html?id=mToqEAAAQBAJ&amp;source=kp_book_description&amp;redir_esc=y">Thematic Analysis: A Practical Guide</a> 책을 통해서 Thematic Analysis 공부를 하고 있다. 이에 대해서도 조만간 정리를 해서 블로그에 올려야겠다.</p>
+어렴풋이 기억 하기로는 요즘에는 논문에 Grounded Theory를 사용한다고 이야기를 잘 안한다고 들었었다. 리뷰어들이 Grounded Theory의 방법론을 굉장히 엄밀하게 따르지 않으면 문제를 제기한다는 것이 이유였다. 그런데 이런 이야기를 떠나서 사실 product를 만듦에 있어서 이론을 만들 일은 없기 때문에 Grounded Theory를 실무에서 사용 할 일이 있을지는 모르겠다. 내가 관심을 가지는 연구 분야도 아니기도 하다. 나는 이론을 만드는 것 보다는 유용한 결과물을 만들어 내는 것에 관심이 있기 때문이다. 이 관점에서 본다면 제품을 만드는 입장에서 나는 [Thematic Analysis](https://atlasti.com/guides/thematic-analysis)를 더 공부 하는 것이 맞는 것 같다. 공교롭게도 요즘 [Thematic Analysis: A Practical Guide](https://books.google.co.kr/books/about/Thematic_Analysis.html?id=mToqEAAAQBAJ&source=kp_book_description&redir_esc=y) 책을 통해서 Thematic Analysis 공부를 하고 있다. 이에 대해서도 조만간 정리를 해서 블로그에 올려야겠다.
