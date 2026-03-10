@@ -1,0 +1,28 @@
+---
+layout: default
+---
+<link rel="stylesheet" href="{{ "/assets/css/index.css" | relative_url }}">
+<div class="main container pt-5 pb-5">
+  <h2>Publications</h2>
+  <hr>
+  <h3 class="mb-3">Conferences</h3>
+  {% for post in site.categories.conference %}
+    {% include post_card.html post=post %}
+  {% endfor %}
+
+  <h3 class="mb-3">Journals</h3>
+  {% for post in site.categories.journal %}
+    {% include post_card.html post=post %}
+  {% endfor %}
+
+  <h3 class="mb-3">Posters</h3>
+  {% for post in site.categories.poster_demo %}
+    {% include post_card.html post=post %}
+  {% endfor %}
+
+  <h2 class="mb-3 mt-5">Other Projects</h2>
+  <hr>
+  {% for post in site.categories.misc %}
+    {% include post_card.html post=post %}
+  {% endfor %}
+</div>

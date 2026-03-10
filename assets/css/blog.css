@@ -37,6 +37,17 @@
   line-height: 1.8;
 }
 
+.blog-content img,
+.blog-content figure {
+  max-width: 100% !important;
+  height: auto !important;
+  width: auto !important;
+}
+
+.blog-content figure {
+  margin: 1rem 0;
+}
+
 @media screen and (min-width: 991.98px) {
   .blog-content {
     font-size: 1.25rem;
