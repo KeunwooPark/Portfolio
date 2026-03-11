@@ -1,0 +1,4 @@
+---
+layout: none
+---
+[{% for post in site.categories.blog %}{"title":{{ post.title | jsonify }},"url":{{ post.url | jsonify }},"excerpt":{{ post.excerpt | strip_html | truncate: 300 | jsonify }},"date":{{ post.publish_date | date: "%B %-d, %Y" | jsonify }}}{% unless forloop.last %},{% endunless %}{% endfor %}]

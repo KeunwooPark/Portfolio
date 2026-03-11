@@ -2,27 +2,52 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" href=/assets/css/header_footer.css>
-		<script src="//code.jquery.com/jquery-3.2.1.min.js"></script>
-		<link rel="stylesheet" href=/assets/bootstrap-4.3.1-dist/css/bootstrap.min.css>
-		<script scr=/assets/bootstrap-4.3.1-dist/js/bootstrap.min.js></script>
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<script async src="https://www.googletagmanager.com/gtag/js?id=G-YG4YGWN03V"></script>
-		<script>
-		  window.dataLayer = window.dataLayer || [];
-		  function gtag(){dataLayer.push(arguments);}
-		  gtag('js', new Date());
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Blog | Keunwoo Park</title>
+    <link rel="canonical" href="https://kwpark.io/blog/">
 
-		  gtag('config', 'G-YG4YGWN03V');
-		</script>
-		
+    
+    
+    <meta name="description" content="Writings by Keunwoo Park on design, HCI, technology, and everyday life.">
+    
+
+    <!-- Open Graph -->
+    <meta property="og:site_name" content="Keunwoo Park">
+    <meta property="og:title" content="Blog">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://kwpark.io/blog/">
+    
+    <meta property="og:description" content="Writings by Keunwoo Park on design, HCI, technology, and everyday life.">
+    
+    
+    <meta property="og:image" content="https://kwpark.io/assets/img/profile.jpg">
+    
+    
+
+    <!-- JSON-LD -->
+    
+
+    <link rel="stylesheet" href="/assets/css/header_footer.css">
+    <script src="//code.jquery.com/jquery-3.2.1.min.js"></script>
+    <link rel="stylesheet" href="/assets/bootstrap-4.3.1-dist/css/bootstrap.min.css">
+    <script src="/assets/bootstrap-4.3.1-dist/js/bootstrap.min.js"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-YG4YGWN03V"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-YG4YGWN03V');
+    </script>
   </head>
   <body>
-		<div class="layout-content">
-			<link rel="stylesheet" type="text/css" href="/assets/css/blog.css">
+    <div class="layout-content">
+      <link rel="stylesheet" type="text/css" href="/assets/css/blog.css">
 <div class="container main pt-5 pb-5">
   <h2>Blog</h2>
   <hr>
+  <input id="search-input" type="text" class="form-control mb-4" placeholder="Search posts...">
+  <div id="search-results"></div>
+  <div id="post-list">
   
     <div class="blog-card">
   <h5><a href="/blog/passing-through-failure/">실패를 통과하는 일</a></h5>
@@ -186,10 +211,55 @@
 </div>
 
   
+  </div>
 </div>
+<script>
+(function() {
+  var searchInput = document.getElementById('search-input');
+  var postList = document.getElementById('post-list');
+  var searchResults = document.getElementById('search-results');
+  var allPosts = null;
 
-		</div>
-	</body>
+  function fetchPosts(cb) {
+    if (allPosts) return cb(allPosts);
+    fetch('/search.json')
+      .then(function(r) { return r.json(); })
+      .then(function(data) { allPosts = data; cb(allPosts); });
+  }
+
+  function renderResults(posts) {
+    if (posts.length === 0) {
+      searchResults.innerHTML = '<p class="text-muted">No results found.</p>';
+      return;
+    }
+    searchResults.innerHTML = posts.map(function(p) {
+      return '<div class="blog-card">'
+        + '<h5><a href="' + p.url + '">' + p.title + '</a></h5>'
+        + '<div class="date">' + p.date + '</div>'
+        + (p.excerpt ? '<p class="excerpt">' + p.excerpt + '</p>' : '')
+        + '</div>';
+    }).join('');
+  }
+
+  searchInput.addEventListener('input', function() {
+    var q = this.value.trim().toLowerCase();
+    if (!q) {
+      postList.style.display = '';
+      searchResults.innerHTML = '';
+      return;
+    }
+    postList.style.display = 'none';
+    fetchPosts(function(posts) {
+      renderResults(posts.filter(function(p) {
+        return p.title.toLowerCase().includes(q) || (p.excerpt && p.excerpt.toLowerCase().includes(q));
+      }));
+    });
+  });
+})();
+</script>
+
+    </div>
+  </body>
   <footer class="mb-5">
     <a href="/">back to home</a>
   </footer>

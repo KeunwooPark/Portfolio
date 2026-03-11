@@ -1,0 +1,41 @@
+---
+layout: none
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://kwpark.io/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://kwpark.io/publications/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://kwpark.io/blog/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://kwpark.io/connect/</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://kwpark.io/miscellaneous/</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  {% for post in site.posts %}
+  <url>
+    <loc>https://kwpark.io{{ post.url }}</loc>
+    {% if post.publish_date %}
+    <lastmod>{{ post.publish_date | date_to_xmlschema }}</lastmod>
+    {% endif %}
+    <changefreq>{% if post.categories contains 'blog' %}monthly{% else %}yearly{% endif %}</changefreq>
+    <priority>{% if post.categories contains 'blog' %}0.7{% else %}0.6{% endif %}</priority>
+  </url>
+  {% endfor %}
+</urlset>

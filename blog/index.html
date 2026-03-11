@@ -1,13 +1,63 @@
 ---
 layout: default
+title: "Blog"
+description: "Writings by Keunwoo Park on design, HCI, technology, and everyday life."
 ---
 <link rel="stylesheet" type="text/css" href="{{ "/assets/css/blog.css" | relative_url }}">
 <div class="container main pt-5 pb-5">
   <h2>Blog</h2>
   <hr>
+  <input id="search-input" type="text" class="form-control mb-4" placeholder="Search posts...">
+  <div id="search-results"></div>
+  <div id="post-list">
   {% for post in site.categories.blog %}
     {% include blog_card.html post=post %}
   {% else %}
     <p class="text-muted">No posts yet.</p>
   {% endfor %}
+  </div>
 </div>
+<script>
+(function() {
+  var searchInput = document.getElementById('search-input');
+  var postList = document.getElementById('post-list');
+  var searchResults = document.getElementById('search-results');
+  var allPosts = null;
+
+  function fetchPosts(cb) {
+    if (allPosts) return cb(allPosts);
+    fetch('/search.json')
+      .then(function(r) { return r.json(); })
+      .then(function(data) { allPosts = data; cb(allPosts); });
+  }
+
+  function renderResults(posts) {
+    if (posts.length === 0) {
+      searchResults.innerHTML = '<p class="text-muted">No results found.</p>';
+      return;
+    }
+    searchResults.innerHTML = posts.map(function(p) {
+      return '<div class="blog-card">'
+        + '<h5><a href="' + p.url + '">' + p.title + '</a></h5>'
+        + '<div class="date">' + p.date + '</div>'
+        + (p.excerpt ? '<p class="excerpt">' + p.excerpt + '</p>' : '')
+        + '</div>';
+    }).join('');
+  }
+
+  searchInput.addEventListener('input', function() {
+    var q = this.value.trim().toLowerCase();
+    if (!q) {
+      postList.style.display = '';
+      searchResults.innerHTML = '';
+      return;
+    }
+    postList.style.display = 'none';
+    fetchPosts(function(posts) {
+      renderResults(posts.filter(function(p) {
+        return p.title.toLowerCase().includes(q) || (p.excerpt && p.excerpt.toLowerCase().includes(q));
+      }));
+    });
+  });
+})();
+</script>
