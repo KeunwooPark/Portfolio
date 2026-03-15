@@ -35,6 +35,22 @@
 
 .blog-content {
   line-height: 1.8;
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+.blog-content p {
+  margin-bottom: 1.4rem;
+}
+
+.blog-content h1,
+.blog-content h2,
+.blog-content h3,
+.blog-content h4,
+.blog-content h5,
+.blog-content h6 {
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
 }
 
 .blog-content blockquote {
