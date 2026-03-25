@@ -35,7 +35,8 @@ A/B 테스트는 쉽게 이야기 해서 1) 어떤 집단의 사람들을 A와 B
 
 A/B 테스트의 구조는 아래 그림에 나와 있다. 연구를 하고자 하는 대상이 있으면 대상을 절반씩 나누어서 한쪽은 실험군, 다른 한쪽은 대조군에 할당하고 각각 다른 조건에 노출 시킨다. 이 과정에서 핵심은 대상을 두 집단에 랜덤하게 배정하는 것이다. 사용자 할당에 편향이 생기면 결과에도 편향이 생긴다. 그리고 Overall Evaluation Criterion (OEC) 가 각 집단에 대해서 측정 된다. OEC는 종속변수라고 생각 하면 된다. 온라인 서비스에서는 주로 클릭률이나 전환률등의 지표가 된다. 이렇게 실험을 디자인 했을 때 실험군과 대조군에서 OEC의 차이가 생긴다면 두 집단을 나눈 요소가 OEC 변화의 원인이 된다.
 
-![](https://lh7-rt.googleusercontent.com/slidesz/AGV_vUcrkomI-5hDspYa6JNNj1aprMeQL9BdYIJR64_AbX2ME9x1ftKQ9yqUmM9QkraRpNyIrRTzMPcfYOiTsO6Ax0Wn7hkZWF4o9X9zjmb7X-qRuw9lrnLXb0j36J7JY-uDGTT6949MVAIV5CFSug9TZO1NwmrqnYEL=s2048?key=8BsibB11yM8Lrkv0JY1guQ)_출처:<https://courses.cs.washington.edu/courses/cse454/13wi/papers/p959-kohavi.pdf>_
+![](https://lh7-rt.googleusercontent.com/slidesz/AGV_vUcrkomI-5hDspYa6JNNj1aprMeQL9BdYIJR64_AbX2ME9x1ftKQ9yqUmM9QkraRpNyIrRTzMPcfYOiTsO6Ax0Wn7hkZWF4o9X9zjmb7X-qRuw9lrnLXb0j36J7JY-uDGTT6949MVAIV5CFSug9TZO1NwmrqnYEL=s2048?key=8BsibB11yM8Lrkv0JY1guQ)
+*출처: [Kohavi et al. (2007)](https://courses.cs.washington.edu/courses/cse454/13wi/papers/p959-kohavi.pdf)*
 
 A/B 테스트를 이해하기 위해서는 중요한 개념들이 있는데 간단하게 불릿으로 정리하겠다.
 

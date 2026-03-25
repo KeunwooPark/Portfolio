@@ -75,6 +75,7 @@ Semantic code는 데이터 너머에 있는 이야기를 하면 안된다.| Sema
 책에서는 시각적 다이어그램을 활용하는 것이 도움이 된다고 이야기 한다. 잠재적 테마들과 서브 테마들의 관계를 thematic map으로 표현하는 것이다. 아래는 thematic map의 예시이다. Thematic map은 데이터에서 찾아낸 의미들의 패턴, 테마들간의 잠재적 연결과 단절을 파악하는데 도움이 된다.
 
 ![](https://media.springernature.com/full/springer-static/image/art%3A10.1007%2Fs11135-021-01182-y/MediaObjects/11135_2021_1182_Fig1_HTML.png)
+*출처: [Springer - Quality & Quantity (doi:10.1007/s11135-021-01182-y)](https://link.springer.com/article/10.1007/s11135-021-01182-y)*
 
 TA 과정에서 세 단계의 테마를 만들게 될 수 있다고 책은 이야기 한다. 가장 상위 레벨의 테마는 overreaching theme이다. 이 테마는 여러 테마들을 포괄하는 하나의 테마이다. 하지만 reflexive TA에서 overreaching theme을 도출 하는 것이 보편적이지는 않고 해야 하는 것도 아니다. 테마(theme)는 다면적인 하나의 컨셉을 의미하며 relexive TA에서 가장 중요한 결과의 단위이다. 서브 테마(subtheme)는 테마 아래에 있는 개념이며 테마의 특정 부분만을 조명한다.
 
