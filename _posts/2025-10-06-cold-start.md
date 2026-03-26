@@ -3,7 +3,7 @@ layout: blog_post
 title: "콜드 스타트"
 permalink: /blog/cold-start/
 publish_date: 2025-10-06
-excerpt: "기업 가치를 결정짓는 네트워크의 과학이라는 부제가 붙어있는 비즈니스 도서이다. 앤드루 첸이 쓴 책인데 그는 a16z 의 파트너이다. 이 책은 네트워크가 중심이 되는 서비스들의 라이프사이클을 다룬다. 콜드 스타트라는 것은 네트워크를 기반으로 하는 서비스가 초기에 아무런 네트워크가 없을 때 초기 네트워크를 만들어야 하는 어려운 상황을 뜻한다. 이 책은 이러한..."
+excerpt: "앤드루 첸의 '콜드 스타트'를 읽고, 네트워크 기반 서비스의 라이프사이클과 초기 네트워크 구축 전략 등 핵심 내용을 정리한다."
 categories: [blog]
 ---
 [![](/assets/img/blog/cold-start/img_1679.jpeg)](/assets/img/blog/cold-start/img_1679.jpeg)

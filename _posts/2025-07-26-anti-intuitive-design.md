@@ -3,7 +3,7 @@ layout: blog_post
 title: "반직관적(anti-intuitive) 디자인"
 permalink: /blog/anti-intuitive-design/
 publish_date: 2025-07-26
-excerpt: "최근에 인터넷에서 Casey Muratori – The Big OOPs: Anatomy of a Thirty-five-year Mistake 영상을 보았다. 상당히 재밌게 보았고 이 영상에서 부터 확장된 생각들이 있어서 기록 하고자 한다. 내가 이 영상에서 얻은 내용은 직관적 시스템 디자인이 항상 좋지 않다는 것이다. 즉, 반직관적..."
+excerpt: "Casey Muratori의 OOP 비판을 출발점으로, 직관적 시스템 디자인이 항상 최선이 아니며 반직관적 디자인이 필요한 경우가 있다는 생각을 정리한다."
 categories: [blog]
 ---
 최근에 인터넷에서 [Casey Muratori – The Big OOPs: Anatomy of a Thirty-five-year Mistake](https://youtu.be/wo84LFzx5nI?si=9t7BqqeWSF-xV9Fj) 영상을 보았다. 상당히 재밌게 보았고 이 영상에서 부터 확장된 생각들이 있어서 기록 하고자 한다. 내가 이 영상에서 얻은 내용은 직관적 시스템 디자인이 항상 좋지 않다는 것이다. 즉, **반직관적 (anti-intuitive) 디자인이 필요한 경우가 있는 것이다.**

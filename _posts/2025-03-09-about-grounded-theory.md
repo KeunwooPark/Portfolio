@@ -3,7 +3,7 @@ layout: blog_post
 title: "Grounded Theory"
 permalink: /blog/about-grounded-theory/
 publish_date: 2025-03-09
-excerpt: "대학원 졸업 후에 부쩍 정성 연구 방법론들에 대한 관심이 높아졌다. 박사 과정에서 주로 정량 연구를 해서 그렇기도 한데 제품 초기 단계에서 필요한 연구 방법론이기 때문이기도 하다. 그러던 중 이번주에 UX 리서치에 관심 있는 사람들 이라는 단체에서 여는 컨퍼런스에 다녀왔다. 거기에서 박소윤 연사님께서 open coding, axial coding,..."
+excerpt: "Grounded Theory의 개념과 특징, 그리고 open coding, axial coding, selective coding 등 핵심 코딩 방법론을 정리한다."
 categories: [blog]
 ---
 대학원 졸업 후에 부쩍 정성 연구 방법론들에 대한 관심이 높아졌다. 박사 과정에서 주로 정량 연구를 해서 그렇기도 한데 제품 초기 단계에서 필요한 연구 방법론이기 때문이기도 하다. 그러던 중 이번주에 [UX 리서치에 관심 있는 사람들](https://pyoux.notion.site/UX-19648c34ac0d80b8a8c9f32045465dd5) 이라는 단체에서 여는 컨퍼런스에 다녀왔다. 거기에서 박소윤 연사님께서 open coding, axial coding, selective coding들에 대해서 이야기를 하셨었는데 일부는 들어본 내용이었지만 일부는 들어보지 못한 내용들 이었다. 그래서 이번 기회에 이 방법론들에 대해서 정리를 좀 해봐야 겠다고 생각 해서 공부를 해보았다. 찾아보니 Grounded Theory에 기반을 두고 있는 코딩 방법론들이었고 다행히도 ATLAS.ti에서 Grouded Theory에 대해서 잘 정리해 두었다. 이 글을 읽고 내 나름대로 이 블로그에 정리를 해본다. 참고로 ATLAS.ti는 유명한 정량 연구 툴을 만드는 회사이다. Grounded Theory에 대해서는 예전에 학교에서 세미나로 배운 적은 있는데 당시에는 나의 연구와 관련이 없기도 했고 꽤나 어렵게 느껴져서 이 글을 읽기 전까지는 전혀 기억이 나지 않는 상태였다.
