@@ -61,6 +61,23 @@
   font-style: italic;
 }
 
+.blog-content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+}
+
+.blog-content th,
+.blog-content td {
+  border: 1px solid #dee2e6;
+  padding: 0.5rem 0.75rem;
+}
+
+.blog-content th {
+  background-color: #f8f9fa;
+  font-weight: 600;
+}
+
 .blog-content img,
 .blog-content figure {
   max-width: 100% !important;
