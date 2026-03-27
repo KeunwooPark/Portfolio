@@ -87,6 +87,6 @@
     </div>
   </body>
   <footer class="mb-5">
-    <a href="/">back to home</a>
+    {% if page.layout == 'blog_post' %}<a href="/blog/">back to blog</a> | {% endif %}<a href="/">back to home</a>
   </footer>
 </html>

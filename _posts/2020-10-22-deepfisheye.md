@@ -3,7 +3,7 @@ layout: post
 
 title: "DeepFisheye: Near-Surface Multi-Finger Tracking Technology Using Fisheye Camera"
 permalink: /deepfisheye/
-thumbnail: /assets/img/deepfisheye/thumbnail.png
+thumbnail: /assets/img/publications/deepfisheye/thumbnail.png
 publish_date: 2020-10-22
 venue: UIST 2020
 authors: "**Keunwoo Park**, Sunbum Kim, Youngwoo Yoon, Tae-Kyun Kim, Geehyuk Lee"
@@ -20,7 +20,7 @@ Near-surface multi-finger tracking (NMFT) technology expands the input space of 
 
 # Technical Concept
 
-![prototype](/assets/img/deepfisheye/technical_concept.png)
+![prototype](/assets/img/publications/deepfisheye/technical_concept.png)
 
 DeepFisheye pipeline first preprocesses a fisheye image, and then estimates the 3D locations of all hand joints with DeepFisheye network (DeepFisheyeNet). Then, two rule-based classifiers classify contact fingers and hand postures.
 

@@ -3,7 +3,7 @@ layout: post
 
 title: "Limitations of Online Play Content for Parents of Infants and Toddlers"
 permalink: /online-play-content-limitations/
-thumbnail: /assets/img/online-play-content-limitations/thumbnail.png
+thumbnail: /assets/img/publications/online-play-content-limitations/thumbnail.png
 publish_date: 2025-02-11
 venue: HCI Korea 2025
 authors: "**Keunwoo Park**, Subin Ahn, Mina Jung, You Jung Cho, Seulah Jeong, and Cheong-Ah Huh"

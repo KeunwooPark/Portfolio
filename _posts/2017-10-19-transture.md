@@ -3,7 +3,7 @@ layout: post
 
 title: "Designing Touch Gestures Using the Space around the Smartwatch as Continuous Input Space"
 permalink: /transture/
-thumbnail: /assets/img/transture/thumbnail.png
+thumbnail: /assets/img/publications/transture/thumbnail.png
 publish_date: 2017-10-19
 venue: ISS 2017
 authors: "Jaehyun Han, Sunggeun Ahn, **Keunwoo Park**, Geehyuk Lee"
@@ -19,11 +19,11 @@ Small touchscreen interfaces such as a smartwatch have usability problems due to
 # Interaction Concept
 A user can continue touch-like interactions even outside of the touchscreen.
 
-![concept](/assets/img/transture/concept.png)
+![concept](/assets/img/publications/transture/concept.png)
 
 We defined *glue state* for interaction in the air.
 
-![state](/assets/img/transture/glue_state.png)
+![state](/assets/img/publications/transture/glue_state.png)
 
 # Documents
 The paper is available from [ACM DL](https://doi.org/10.1145/3132272.3134134).

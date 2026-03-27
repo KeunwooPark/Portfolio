@@ -3,7 +3,7 @@ layout: post
 
 title: "Poke vs. Vibration: Comparing Information Transfer on a 3x3 Watch-back Tactile Display"
 permalink: /pokedisplay/
-thumbnail: /assets/img/pokedisplay/thumbnail.jpg
+thumbnail: /assets/img/publications/pokedisplay/thumbnail.jpg
 publish_date: 2019-10-03
 
 venue: MobileHCI 2019
@@ -19,13 +19,13 @@ A watch-back tactile display (WBTD) is an attractive output option due to its al
 
 # Prototype
 The prototype consists of servo motors and linear resonant actuators (LRA). It could control the poking distance from 1mm to 3mm.
-![hardware1](/assets/img/pokedisplay/hardware1.png)
+![hardware1](/assets/img/publications/pokedisplay/hardware1.png)
 
 It can be worn on a user's wrist.
-![hardware on wrist](/assets/img/pokedisplay/hardware2.png)
+![hardware on wrist](/assets/img/publications/pokedisplay/hardware2.png)
 
 The tactile patterns we used for the experiments.
-![hardware on wrist](/assets/img/pokedisplay/pattern.png)
+![hardware on wrist](/assets/img/publications/pokedisplay/pattern.png)
 
 # Documents
 Please see the paper from [ACM DL](https://doi.org/10.1145/3338286.3340134) for more details.

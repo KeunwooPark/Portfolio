@@ -3,7 +3,7 @@ layout: post
 
 title: "SGToolkit: An Interactive Gesture Authoring Toolkit for Embodied Conversational Agents"
 permalink: /sgtoolkit/
-thumbnail: /assets/img/sgtoolkit/thumbnail.png
+thumbnail: /assets/img/publications/sgtoolkit/thumbnail.png
 publish_date: 2021-10-11
 venue: UIST 2021
 authors: Youngwoo Yoon\*, **Keunwoo Park**\*, Minsu Jang, Jaehong Kim, Geehyuk Lee
@@ -26,7 +26,7 @@ The cheapest way to generate social behavior is automatic generation; it does no
 
 The key idea of the new gesture generation toolkit is combining automatic gesture generation and manual controls. The below figure shows the workflow of the proposed toolkit. The toolkit first generates gestures from speech automatically, and then users add control elements to refine the gestures. The toolkit provides fine-level pose control and coarse-level style control elements.
 
-![concept](/assets/img/sgtoolkit/concept.png)
+![concept](/assets/img/publications/sgtoolkit/concept.png)
 
 **For more details of the gesuture generation and evaluation, please see our paper.**
 

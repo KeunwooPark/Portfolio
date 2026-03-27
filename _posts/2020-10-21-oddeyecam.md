@@ -3,7 +3,7 @@ layout: post
 
 title: "OddEyeCam: A Sensing Technique for Body-Centric Peephole Interaction using WFoV RGB and NFoV Depth Cameras"
 permalink: /oddeyecam/
-thumbnail: /assets/img/oddeyecam/thumbnail.jpg
+thumbnail: /assets/img/publications/oddeyecam/thumbnail.jpg
 publish_date:  2020-10-21
 venue: UIST 2020
 authors: "Daehwa Kim, **Keunwoo Park**, Geehyuk Lee"
@@ -32,16 +32,16 @@ body-tracking algorithm provides body keypoints from the undistorted image.
 
 6. We can obtain the device location with respect to the body by converting the body position (obtained in Step 5) with respect to the camera.
 
-![pipeline](/assets/img/oddeyecam/pipeline.png)
+![pipeline](/assets/img/publications/oddeyecam/pipeline.png)
 
 # Hardware Prototype
 We used a 180° fsheyeeye lens USB camera as the wide field of view RGB camera. Intel RealSense D415 was chosen as the narrow field of view depth camera in our prototype.
 
-![hardware](/assets/img/oddeyecam/hardware.png)
+![hardware](/assets/img/publications/oddeyecam/hardware.png)
 
 # Example Applications
 We created several applications to show various design possibilities of OddEyeCam.
-![applications](/assets/img/oddeyecam/applications.png)
+![applications](/assets/img/publications/oddeyecam/applications.png)
 
 - A. Drag and Drop Between Apps
 - B. Body-Centric Folder
