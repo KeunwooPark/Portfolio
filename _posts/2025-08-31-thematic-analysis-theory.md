@@ -6,7 +6,7 @@ publish_date: 2025-08-31
 excerpt: "Thematic Analysis의 이론적 배경인 존재론, 인식론, 언어 이론을 정리하고, 이에 따라 달라지는 세 가지 TA 방법론(Reflexive, Coding Reliability, Codebook)을 비교한다."
 categories: [blog]
 ---
-[이전 글](https://keunwoo.wordpress.com/2025/04/05/thematic-analysis-practice/)에서 Thematic Analysis (TA)를 실제로 수행 하는 방법에 대해서 정리 했었다. 이 글에서는 동일한 책인 [Virginia Braun, Victoria Clarke의 Thematic Analysis: A Practical Guide](https://uk.sagepub.com/en-gb/eur/thematic-analysis/book248481) 의 후반부에서 나와 있는 TA 이론적 배경에 대해서 이야기를 한다. 그렇기 때문에 TA 자체에 대해서 이야기 하기 보다는 TA의 학문적 컨텍스트에 대해서 주로 이야기를 한다. 구체적으로는 챕터 6 (Conceptually Locating Reflexive Thematic Analysis)와 챕터 8 (Understanding Similarities and Differences Between Reflexive Thematic Analysis and Its Methodological Siblings and Cousins)를 정리한다.
+[이전 글](/blog/thematic-analysis-practice)에서 Thematic Analysis (TA)를 실제로 수행 하는 방법에 대해서 정리 했었다. 이 글에서는 동일한 책인 [Virginia Braun, Victoria Clarke의 Thematic Analysis: A Practical Guide](https://uk.sagepub.com/en-gb/eur/thematic-analysis/book248481) 의 후반부에서 나와 있는 TA 이론적 배경에 대해서 이야기를 한다. 그렇기 때문에 TA 자체에 대해서 이야기 하기 보다는 TA의 학문적 컨텍스트에 대해서 주로 이야기를 한다. 구체적으로는 챕터 6 (Conceptually Locating Reflexive Thematic Analysis)와 챕터 8 (Understanding Similarities and Differences Between Reflexive Thematic Analysis and Its Methodological Siblings and Cousins)를 정리한다.
 
 ## 정성 연구의 다양성
 
