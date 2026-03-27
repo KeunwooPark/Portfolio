@@ -3,7 +3,7 @@ layout: blog_post
 title: "프로덕트를 처음부터 디자인하는 방법"
 permalink: /blog/design-product-from-scratch/
 publish_date: 2025-06-14
-excerpt: "'프로덕트를 처음부터 디자인 하는 방법' 이라는 주제 아래 일련의 글들을 썼고 이들을 소책자라고 일컫고 있다. 이 소책자는 제품을 사용자 중심으로 디자인 단계들을 설명한다. 소책자는 아래 링크에서 볼 수 있다. https://github.com/KeunwooPark/design-product-from-scratch 이 소책자는 회사 내에서 프로덕트를..."
+excerpt: "사용자 중심의 프로덕트 디자인 프로세스를 정리한 소책자를 공개했다. 제품을 만드는 나만의 방식과 철학을 담았다."
 categories: [blog]
 ---
 '프로덕트를 처음부터 디자인 하는 방법' 이라는 주제 아래 일련의 글들을 썼고 이들을 소책자라고 일컫고 있다. 이 소책자는 제품을 사용자 중심으로 디자인 단계들을 설명한다. 소책자는 아래 링크에서 볼 수 있다.

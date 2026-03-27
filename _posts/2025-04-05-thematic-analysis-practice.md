@@ -3,7 +3,7 @@ layout: blog_post
 title: "Thematic Analysis (주제 분석) - 실전편"
 permalink: /blog/thematic-analysis-practice/
 publish_date: 2025-04-05
-excerpt: "이 글은 Virginia Braun, Victoria Clarke의 Thematic Analysis: A Practical Guide 책을 읽고 그 내용을 정리한 글이다. 이 책은 크게 두 부분으로 나누어진다. 첫 번째 파트가 실전에 대한 이야기인데 이 글에서는 이 파트만 다룬다. Thematic Analysis(TA)를 해보고 싶은데 어떻게 해야 하는지..."
+excerpt: "Thematic Analysis(TA)를 실제로 수행하는 6단계 방법론을 Braun & Clarke의 책을 바탕으로 정리한다. TA를 처음 시작하거나 제대로 하고 있는지 확인하고 싶은 사람에게 유용한 글이다."
 categories: [blog]
 ---
 이 글은 [Virginia Braun, Victoria Clarke의 Thematic Analysis: A Practical Guide](https://uk.sagepub.com/en-gb/eur/thematic-analysis/book248481) 책을 읽고 그 내용을 정리한 글이다. 이 책은 크게 두 부분으로 나누어진다. 첫 번째 파트가 실전에 대한 이야기인데 이 글에서는 이 파트만 다룬다. Thematic Analysis(TA)를 해보고 싶은데 어떻게 해야 하는지 모르겠거나 대체 내가 하고 있는 것이 TA인지 헷갈리는 사람들에게 도움이 될 것이라 생각 한다.
