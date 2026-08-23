@@ -10,7 +10,8 @@ description: "Writings by Keunwoo Park on design, HCI, technology, and everyday 
   <input id="search-input" type="text" class="form-control mb-4" placeholder="Search posts...">
   <div id="search-results"></div>
   <div id="post-list">
-  {% for post in site.categories.blog %}
+  {% assign blog_posts = site.blog | sort: 'publish_date' | reverse %}
+  {% for post in blog_posts %}
     {% include blog_card.html post=post %}
   {% else %}
     <p class="text-muted">No posts yet.</p>

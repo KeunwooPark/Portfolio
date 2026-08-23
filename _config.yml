@@ -1,0 +1,7 @@
+# Blog posts live in `_blog/<slug>/index.md` as page bundles: the post and its
+# images sit in the same folder, so images are referenced relatively (`![](photo.jpg)`).
+# Do NOT set a `permalink:` here — a collection-level permalink flattens the
+# bundle's static files into /blog/. Set `permalink:` per post in its front matter.
+collections:
+  blog:
+    output: true

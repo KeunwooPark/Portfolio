@@ -28,14 +28,24 @@ layout: none
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
+  {% for post in site.blog %}
+  <url>
+    <loc>https://kwpark.io{{ post.url }}</loc>
+    {% if post.publish_date %}
+    <lastmod>{{ post.publish_date | date_to_xmlschema }}</lastmod>
+    {% endif %}
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  {% endfor %}
   {% for post in site.posts %}
   <url>
     <loc>https://kwpark.io{{ post.url }}</loc>
     {% if post.publish_date %}
     <lastmod>{{ post.publish_date | date_to_xmlschema }}</lastmod>
     {% endif %}
-    <changefreq>{% if post.categories contains 'blog' %}monthly{% else %}yearly{% endif %}</changefreq>
-    <priority>{% if post.categories contains 'blog' %}0.7{% else %}0.6{% endif %}</priority>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
   </url>
   {% endfor %}
 </urlset>
